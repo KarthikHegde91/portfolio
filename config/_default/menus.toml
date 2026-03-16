@@ -29,14 +29,10 @@
 
 [[main]]
   name = "Status"
-  url = "https://status.karthikhegde.in"
+  pageRef = "status"
   weight = 50
-  [main.params]
-    external = true
 
 [[main]]
   name = "Grafana"
-  url = "https://grafana.karthikhegde.in"
+  pageRef = "grafana"
   weight = 60
-  [main.params]
-    external = true
