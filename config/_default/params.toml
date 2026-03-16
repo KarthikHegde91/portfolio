@@ -1,0 +1,53 @@
+# -- Blowfish Theme Parameters --
+# Full reference: https://blowfish.page/docs/configuration/
+
+colorScheme = "cyberpunk"
+defaultAppearance = "dark"
+autoSwitchAppearance = true
+
+enableSearch = true
+enableCodeCopy = true
+
+[header]
+  layout = "basic"
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = false
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "custom"
+  homepageImage = ""
+  showRecent = true
+  showRecentItems = 6
+  showMoreLink = true
+  showMoreLinkDest = "/blog"
+  cardView = true
+  cardViewScreenWidth = false
+
+[article]
+  showDate = true
+  showViews = false
+  showLikes = false
+  showDateUpdated = true
+  showAuthor = true
+  showBreadcrumbs = true
+  showHeadingAnchors = true
+  showPagination = true
+  showReadingTime = true
+  showTableOfContents = true
+  showWordCount = false
+  showTaxonomies = true
+  sharingLinks = ["linkedin", "twitter", "reddit", "email"]
+
+[list]
+  showBreadcrumbs = true
+  showTableOfContents = false
+  groupByYear = true
+  cardView = true
+
+[taxonomy]
+  showTermCount = true

@@ -1,0 +1,21 @@
+# -- Language Configuration --
+
+[en]
+  languageName = "English"
+  weight = 1
+
+  [en.params]
+    displayName = "Karthik B Hegde"
+    isoCode = "en"
+
+  [en.params.author]
+    name = "Karthik B Hegde"
+    headline = "DevOps Engineer | CI/CD | Kubernetes | Multi-Cloud | AI-Assisted Engineering"
+    # TODO: Add your profile image to assets/img/author.jpg
+    # image = "img/author.jpg"
+    links = [
+      { github = "https://github.com/KarthikHegde91" },
+      { linkedin = "https://www.linkedin.com/in/karthik-hegde-9112b6198" },
+      { email = "mailto:hello@karthikhegde.in" },
+      { link = "https://karthikhegde.in" },
+    ]

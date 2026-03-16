@@ -1,0 +1,571 @@
+/* ============================================
+   Cyberpunk / Neon Theme — Custom Styles
+   Effects scoped to dark mode via .dark selector
+   ============================================ */
+
+/* ============================================
+   LAYOUT — Widen content area
+   ============================================ */
+
+body {
+  max-width: 100rem !important;
+}
+
+@media (min-width: 768px) {
+  body { padding-left: 2.5rem !important; padding-right: 2.5rem !important; }
+}
+
+@media (min-width: 1024px) {
+  body { padding-left: 3.5rem !important; padding-right: 3.5rem !important; }
+}
+
+@media (min-width: 1280px) {
+  body { padding-left: 4rem !important; padding-right: 4rem !important; }
+}
+
+/* Widen prose content and center */
+.prose {
+  max-width: 90ch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+article.prose { max-width: 100ch !important; }
+
+/* Override Tailwind's max-w-prose (65ch) on single pages */
+#single_header.max-w-prose,
+.article-content.max-w-prose,
+footer.max-w-prose {
+  max-width: 90ch !important;
+}
+
+/* Center single page header */
+#single_header {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section/listing pages — center header and widen description */
+main > header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Widen the description prose on listing pages */
+main > section.prose .min-w-0.max-w-prose {
+  max-width: 80ch !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Center description text on listing pages */
+main > section.prose .min-w-0.max-w-prose > p {
+  text-align: center;
+}
+
+/* Widen card grid containers */
+main > section.prose {
+  max-width: 100% !important;
+}
+
+/* ============================================
+   PAGE & SECTION HEADINGS — Cyberpunk treatment
+   ============================================ */
+
+/* Page titles — Orbitron futuristic font (both modes) */
+h1.text-4xl {
+  font-family: 'Orbitron', sans-serif !important;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.dark h1.text-4xl {
+  color: rgb(0, 229, 255) !important;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
+}
+
+/* Section headings (h2) — Fira Code monospace */
+.dark .prose h2 {
+  font-family: 'Fira Code', monospace;
+  color: rgb(0, 229, 255);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
+  letter-spacing: 0.03em;
+}
+
+/* Sub-headings (h3) */
+.dark .prose h3 {
+  color: rgba(0, 229, 255, 0.8);
+}
+
+/* h4 / bold labels */
+.dark .prose h4,
+.dark .prose strong {
+  color: rgba(226, 232, 240, 0.95);
+}
+
+/* Horizontal rules — cyan tint */
+.dark .prose hr {
+  border-color: rgba(0, 229, 255, 0.15);
+}
+
+/* ============================================
+   HERO SECTION — Full-width breakout + grid bg
+   ============================================ */
+
+.cyber-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 5rem 2rem 2rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+/* Grid background pattern (dark mode only) */
+.dark .cyber-hero {
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Scanline overlay */
+.cyber-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 229, 255, 0.015) 2px,
+    rgba(0, 229, 255, 0.015) 4px
+  );
+}
+
+/* CRT vignette */
+.cyber-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 60%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+.cyber-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================
+   NAME — Orbitron Neon Typography
+   ============================================ */
+
+.cyber-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: center;
+  margin: 0 0 0.4rem 0;
+  padding: 0;
+  line-height: 1.2;
+  border: none;
+}
+
+.dark .cyber-name {
+  color: rgb(0, 229, 255);
+  text-shadow:
+    0 0 7px rgba(0, 229, 255, 0.6),
+    0 0 20px rgba(0, 229, 255, 0.35),
+    0 0 40px rgba(0, 229, 255, 0.15),
+    0 0 80px rgba(0, 229, 255, 0.05);
+}
+
+.cyber-name {
+  color: rgb(0, 121, 135);
+}
+
+/* ============================================
+   SUBTITLE — Static role line
+   ============================================ */
+
+.cyber-subtitle {
+  font-family: 'Fira Code', monospace;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.dark .cyber-subtitle {
+  color: rgba(226, 232, 240, 0.5);
+}
+
+.cyber-subtitle {
+  color: rgba(0, 121, 135, 0.6);
+}
+
+/* ============================================
+   GLITCH ANIMATION
+   ============================================ */
+
+.dark .cyber-glitch {
+  animation: glitch-idle 5s infinite;
+}
+
+@keyframes glitch-idle {
+  0%, 95%, 100% { transform: translate(0); filter: none; }
+  96% { transform: translate(-2px, 1px); filter: hue-rotate(90deg); }
+  97% { transform: translate(2px, -1px); filter: hue-rotate(-90deg); }
+  98% { transform: translate(-1px, 0); filter: none; }
+  99% { transform: translate(1px, 1px); filter: hue-rotate(45deg); }
+}
+
+/* ============================================
+   TYPED.JS AREA
+   ============================================ */
+
+.cyber-typed-area {
+  font-family: 'Fira Code', monospace;
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  min-height: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.dark .cyber-typed-area { color: rgba(226, 232, 240, 0.85); }
+
+.cyber-typed-area .typed-cursor { font-size: 1.1em; }
+
+.dark .cyber-typed-area .typed-cursor { color: rgb(0, 229, 255); }
+
+.cyber-prompt { opacity: 0.5; margin-right: 0.5rem; }
+
+.dark .cyber-prompt { color: rgb(0, 229, 255); }
+
+/* ============================================
+   SOCIAL ICONS
+   ============================================ */
+
+.cyber-socials {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.cyber-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.dark .cyber-social-link {
+  color: rgba(226, 232, 240, 0.6);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+.dark .cyber-social-link:hover {
+  color: rgb(0, 229, 255);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.cyber-social-link {
+  color: rgba(0, 121, 135, 0.6);
+  border: 1px solid rgba(0, 121, 135, 0.2);
+}
+
+.cyber-social-link:hover {
+  color: rgb(0, 121, 135);
+  border-color: rgba(0, 121, 135, 0.5);
+}
+
+/* ============================================
+   RESUME DOWNLOAD CTA
+   ============================================ */
+
+.cyber-resume-cta {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.dark .cyber-resume-cta {
+  color: rgba(226, 232, 240, 0.4);
+}
+
+.dark .cyber-resume-cta:hover {
+  color: rgb(0, 229, 255);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+.cyber-resume-cta {
+  color: rgba(0, 121, 135, 0.5);
+}
+
+.cyber-resume-cta:hover {
+  color: rgb(0, 121, 135);
+}
+
+/* ============================================
+   SCROLL-DOWN INDICATOR
+   ============================================ */
+
+.cyber-scroll-hint {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease infinite;
+  z-index: 2;
+}
+
+.dark .cyber-scroll-hint { color: rgba(0, 229, 255, 0.4); }
+
+.cyber-scroll-hint { color: rgba(0, 121, 135, 0.4); }
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+
+.cyber-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2.5rem 2rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.cyber-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dark .cyber-stat {
+  background: rgba(0, 229, 255, 0.03);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.dark .cyber-stat:hover {
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.08);
+}
+
+.cyber-stat {
+  background: rgba(0, 121, 135, 0.03);
+  border: 1px solid rgba(0, 121, 135, 0.1);
+}
+
+.cyber-stat-number {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.dark .cyber-stat-number {
+  color: rgb(0, 229, 255);
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+.cyber-stat-number {
+  color: rgb(0, 121, 135);
+}
+
+.cyber-stat-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dark .cyber-stat-label {
+  color: rgba(226, 232, 240, 0.5);
+}
+
+.cyber-stat-label {
+  color: rgba(0, 121, 135, 0.6);
+}
+
+/* ============================================
+   GLASSMORPHISM NAV BUTTONS
+   ============================================ */
+
+.cyber-btn {
+  display: inline-block;
+  padding: 0.7rem 1.8rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.dark .cyber-btn {
+  background: rgba(0, 229, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  color: rgb(226, 232, 240);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dark .cyber-btn:hover {
+  background: rgba(0, 229, 255, 0.12);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+  color: rgb(0, 229, 255);
+}
+
+.cyber-btn {
+  background: rgba(0, 121, 135, 0.05);
+  border: 1px solid rgba(0, 121, 135, 0.25);
+  color: rgb(0, 121, 135);
+}
+
+.cyber-btn:hover {
+  background: rgba(0, 121, 135, 0.1);
+  border-color: rgba(0, 121, 135, 0.5);
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.main-menu > a {
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.03em;
+}
+
+.dark .main-menu > a {
+  color: rgb(0, 229, 255) !important;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+.main-menu a {
+  font-family: 'Fira Code', monospace;
+}
+
+.dark header nav {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.dark header nav a[aria-current="page"],
+.dark header nav a.active {
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}
+
+/* ============================================
+   RECENT SECTION
+   ============================================ */
+
+.cyber-recent { margin-top: 4rem; }
+
+.cyber-recent h2,
+.cyber-recent .section-title {
+  font-family: 'Fira Code', monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dark .cyber-recent h2,
+.dark .cyber-recent .section-title {
+  color: rgb(0, 229, 255);
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
+}
+
+.dark .cyber-recent a[href*="blog"] {
+  color: rgba(0, 229, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.dark .cyber-recent a[href*="blog"]:hover {
+  color: rgb(0, 229, 255);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+/* ============================================
+   CARD & BADGE HOVER
+   ============================================ */
+
+.dark article.group { transition: all 0.3s ease; }
+
+.dark article.group:hover {
+  box-shadow: 0 0 20px rgba(217, 70, 239, 0.08);
+}
+
+.dark .badge { transition: all 0.3s ease; }
+
+.dark .badge:hover {
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .cyber-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .cyber-hero {
+    padding: 3rem 1rem 2rem;
+  }
+
+  .cyber-btn {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.8rem;
+  }
+
+  .main-menu > a {
+    font-size: 0.8rem !important;
+  }
+
+  .cyber-stats {
+    gap: 0.75rem;
+  }
+
+  .cyber-stat {
+    padding: 1rem 0.5rem;
+  }
+}

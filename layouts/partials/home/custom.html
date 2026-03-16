@@ -1,0 +1,102 @@
+<section class="cyber-hero">
+
+  {{/* Name — large neon typography with glitch */}}
+  <h1 class="cyber-glitch cyber-name">KARTHIK B HEGDE</h1>
+
+  {{/* Static subtitle — always visible */}}
+  <p class="cyber-subtitle">DevOps Engineer</p>
+
+  {{/* Typed.js — rotating skill lines */}}
+  <div class="cyber-typed-area">
+    <span class="cyber-prompt">&gt;</span>
+    <span id="cyber-typed"></span>
+  </div>
+
+  {{/* Social icons */}}
+  <div class="cyber-socials">
+    <a href="https://github.com/KarthikHegde91" target="_blank" rel="noopener" aria-label="GitHub" class="cyber-social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/karthik-hegde-9112b6198" target="_blank" rel="noopener" aria-label="LinkedIn" class="cyber-social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="mailto:hello@karthikhegde.in" aria-label="Email" class="cyber-social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+  </div>
+
+  {{/* Resume download CTA */}}
+  <a href="{{ "Karthik_B_Hegde_Resume.pdf" | relURL }}" class="cyber-resume-cta" target="_blank" rel="noopener">
+    Download Resume &darr;
+  </a>
+
+  {{/* Scroll indicator */}}
+  <div class="cyber-scroll-hint" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+  </div>
+
+</section>
+
+{{/* Stats section */}}
+<section class="cyber-stats">
+  <div class="cyber-stat">
+    <span class="cyber-stat-number">3+</span>
+    <span class="cyber-stat-label">Years Experience</span>
+  </div>
+  <div class="cyber-stat">
+    <span class="cyber-stat-number">4</span>
+    <span class="cyber-stat-label">Platforms Shipped</span>
+  </div>
+  <div class="cyber-stat">
+    <span class="cyber-stat-number">10+</span>
+    <span class="cyber-stat-label">Engineers Supported</span>
+  </div>
+  <div class="cyber-stat">
+    <span class="cyber-stat-number">$0</span>
+    <span class="cyber-stat-label">Monthly Infra Cost</span>
+  </div>
+</section>
+
+{{/* Page content from _index.md (if any) */}}
+{{ with .Content }}
+<section class="prose dark:prose-invert mx-auto mt-8 max-w-3xl px-4">
+  {{ . }}
+</section>
+{{ end }}
+
+{{/* Recent articles — only show if there are actual posts */}}
+{{ if and .Site.Params.homepage.showRecent (gt (len (where .Site.RegularPages "Section" "blog")) 0) }}
+<section class="cyber-recent">
+  {{ partial "recent-articles/main.html" . }}
+</section>
+{{ end }}
+
+{{/* Typed.js — loaded here instead of extend-footer to avoid partialCached issue */}}
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+  (function() {
+    var el = document.getElementById('cyber-typed');
+    if (!el) return;
+    function init() {
+      if (typeof Typed === 'undefined') { setTimeout(init, 100); return; }
+      new Typed('#cyber-typed', {
+        strings: [
+          'CI/CD | Kubernetes | Docker | Multi-Cloud',
+          '3+ years shipping production infrastructure',
+          'GitHub Actions \u00b7 Terraform \u00b7 Pulumi \u00b7 Kafka',
+          'Prometheus \u00b7 Grafana \u00b7 PostgreSQL \u00b7 Redis',
+          'Building production infra on a $0/month budget',
+          'hello@karthikhegde.in'
+        ],
+        typeSpeed: 40,
+        backSpeed: 25,
+        backDelay: 2000,
+        startDelay: 600,
+        loop: true,
+        showCursor: true,
+        cursorChar: '\u2588'
+      });
+    }
+    init();
+  })();
+</script>
