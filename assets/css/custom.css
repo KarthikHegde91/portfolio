@@ -78,6 +78,7 @@ h1.text-4xl {
   font-family: 'Orbitron', sans-serif !important;
   letter-spacing: 0.04em;
   text-align: center;
+  color: rgb(0, 121, 135) !important;
 }
 
 .dark h1.text-4xl {
@@ -86,25 +87,53 @@ h1.text-4xl {
 }
 
 /* Section headings (h2) — Fira Code monospace */
-.dark .prose h2 {
+.prose h2 {
   font-family: 'Fira Code', monospace;
-  color: rgb(0, 229, 255);
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
+  color: rgb(0, 121, 135);
   letter-spacing: 0.03em;
 }
 
+.dark .prose h2 {
+  color: rgb(0, 229, 255);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
+}
+
 /* Sub-headings (h3) */
+.prose h3 {
+  color: rgba(0, 100, 115, 0.9);
+}
+
 .dark .prose h3 {
   color: rgba(0, 229, 255, 0.8);
 }
 
 /* h4 / bold labels */
+.prose h4,
+.prose strong {
+  color: rgb(0, 80, 90);
+}
+
 .dark .prose h4,
 .dark .prose strong {
   color: rgba(226, 232, 240, 0.95);
 }
 
-/* Horizontal rules — cyan tint */
+/* Body text in prose */
+.prose p,
+.prose li {
+  color: rgba(0, 50, 60, 0.8);
+}
+
+.dark .prose p,
+.dark .prose li {
+  color: rgba(226, 232, 240, 0.75);
+}
+
+/* Horizontal rules — teal/cyan tint */
+.prose hr {
+  border-color: rgba(0, 121, 135, 0.15);
+}
+
 .dark .prose hr {
   border-color: rgba(0, 229, 255, 0.15);
 }
@@ -567,5 +596,1108 @@ h1.text-4xl {
 
   .cyber-stat {
     padding: 1rem 0.5rem;
+  }
+}
+
+/* ============================================
+   SINGLE-PAGE SECTIONS — Shared styles
+   ============================================ */
+
+.cyber-section {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  scroll-margin-top: 5rem;
+}
+
+.dark .cyber-section + .cyber-section {
+  border-top: 1px solid rgba(0, 229, 255, 0.08);
+}
+
+.cyber-section + .cyber-section {
+  border-top: 1px solid rgba(0, 121, 135, 0.12);
+}
+
+.cyber-section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.dark .cyber-section-title {
+  color: rgb(0, 229, 255);
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
+}
+
+.cyber-section-title {
+  color: rgb(0, 121, 135);
+}
+
+/* Fade-in animation with alternating slide directions */
+.cyber-fade-in {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.cyber-fade-in.cyber-slide-left {
+  transform: translateX(-40px);
+}
+
+.cyber-fade-in.cyber-slide-right {
+  transform: translateX(40px);
+}
+
+.cyber-fade-in.cyber-visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* ============================================
+   SCROLL PROGRESS BAR
+   ============================================ */
+
+.cyber-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+.dark .cyber-progress-bar {
+  background: linear-gradient(90deg, rgb(0, 229, 255), rgb(217, 70, 239));
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.cyber-progress-bar {
+  background: linear-gradient(90deg, rgb(0, 121, 135), rgb(0, 180, 200));
+}
+
+/* ============================================
+   CURRENTLY BUILDING TICKER
+   ============================================ */
+
+.cyber-ticker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  animation: cyber-ticker-pulse 3s ease-in-out infinite;
+}
+
+.dark .cyber-ticker {
+  background: rgba(0, 229, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.12);
+}
+
+.cyber-ticker {
+  background: rgba(0, 121, 135, 0.05);
+  border: 1px solid rgba(0, 121, 135, 0.12);
+}
+
+.cyber-ticker-label {
+  white-space: nowrap;
+}
+
+.dark .cyber-ticker-label {
+  color: rgba(0, 229, 255, 0.6);
+}
+
+.cyber-ticker-label {
+  color: rgba(0, 121, 135, 0.6);
+}
+
+.dark .cyber-ticker-text {
+  color: rgba(226, 232, 240, 0.7);
+}
+
+.cyber-ticker-text {
+  color: rgba(0, 50, 60, 0.7);
+}
+
+@keyframes cyber-ticker-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* ============================================
+   SCROLL-SPY ACTIVE NAV
+   ============================================ */
+
+.dark header nav a.cyber-nav-active {
+  color: rgb(0, 229, 255) !important;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.dark header nav a.cyber-nav-active::after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin-top: 2px;
+  background: rgb(0, 229, 255);
+  box-shadow: 0 0 6px rgba(0, 229, 255, 0.4);
+}
+
+header nav a.cyber-nav-active {
+  color: rgb(0, 121, 135) !important;
+  font-weight: 700;
+}
+
+header nav a.cyber-nav-active::after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin-top: 2px;
+  background: rgb(0, 121, 135);
+}
+
+/* ============================================
+   PROJECT CARD 3D TILT
+   ============================================ */
+
+.cyber-project-card {
+  transition: all 0.3s ease, transform 0.15s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+.cyber-about {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cyber-about p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.dark .cyber-about p {
+  color: rgba(226, 232, 240, 0.8);
+}
+
+.cyber-about p {
+  color: rgba(0, 50, 60, 0.8);
+}
+
+.dark .cyber-about strong {
+  color: rgb(0, 229, 255);
+}
+
+.cyber-about strong {
+  color: rgb(0, 121, 135);
+}
+
+.cyber-section-link {
+  display: inline-block;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.dark .cyber-section-link {
+  color: rgba(0, 229, 255, 0.6);
+}
+
+.dark .cyber-section-link:hover {
+  color: rgb(0, 229, 255);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+.cyber-section-link {
+  color: rgba(0, 121, 135, 0.7);
+}
+
+.cyber-section-link:hover {
+  color: rgb(0, 121, 135);
+}
+
+/* ============================================
+   SKILLS SECTION
+   ============================================ */
+
+.cyber-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.cyber-skill-category {
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dark .cyber-skill-category {
+  background: rgba(0, 229, 255, 0.03);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.dark .cyber-skill-category:hover {
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.08);
+}
+
+.cyber-skill-category {
+  background: rgba(0, 121, 135, 0.03);
+  border: 1px solid rgba(0, 121, 135, 0.1);
+}
+
+.cyber-skill-category h3 {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+}
+
+.dark .cyber-skill-category h3 {
+  color: rgba(0, 229, 255, 0.7);
+}
+
+.cyber-skill-category h3 {
+  color: rgba(0, 121, 135, 0.8);
+}
+
+.cyber-skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cyber-skill-badge {
+  display: inline-block;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.dark .cyber-skill-badge {
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.dark .cyber-skill-badge:hover {
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.15);
+  color: rgb(0, 229, 255);
+}
+
+.cyber-skill-badge {
+  background: rgba(0, 121, 135, 0.06);
+  border: 1px solid rgba(0, 121, 135, 0.15);
+  color: rgba(0, 121, 135, 0.8);
+}
+
+/* ============================================
+   EXPERIENCE TIMELINE
+   ============================================ */
+
+.cyber-timeline {
+  max-width: 42rem;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.dark .cyber-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(0, 229, 255, 0.3), rgba(0, 229, 255, 0.05));
+}
+
+.cyber-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(0, 121, 135, 0.3), rgba(0, 121, 135, 0.05));
+}
+
+.cyber-timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+}
+
+.cyber-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dark .cyber-timeline-item::before {
+  background: rgb(0, 229, 255);
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}
+
+.cyber-timeline-item::before {
+  background: rgb(0, 121, 135);
+}
+
+.cyber-timeline-date {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dark .cyber-timeline-date {
+  color: rgba(0, 229, 255, 0.7);
+}
+
+.cyber-timeline-date {
+  color: rgba(0, 121, 135, 0.7);
+}
+
+.cyber-timeline-role {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0.3rem 0 0.2rem;
+}
+
+.dark .cyber-timeline-role {
+  color: rgba(226, 232, 240, 0.95);
+}
+
+.cyber-timeline-role {
+  color: rgb(0, 50, 60);
+}
+
+.cyber-timeline-company {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  margin: 0 0 0.8rem;
+}
+
+.dark .cyber-timeline-company {
+  color: rgba(226, 232, 240, 0.5);
+}
+
+.cyber-timeline-company {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.cyber-timeline-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cyber-timeline-details li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.dark .cyber-timeline-details li {
+  color: rgba(226, 232, 240, 0.7);
+}
+
+.cyber-timeline-details li {
+  color: rgba(0, 50, 60, 0.8);
+}
+
+.cyber-timeline-details li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+}
+
+.dark .cyber-timeline-details li::before {
+  color: rgba(0, 229, 255, 0.5);
+}
+
+.cyber-timeline-details li::before {
+  color: rgba(0, 121, 135, 0.5);
+}
+
+/* ============================================
+   PROJECTS SECTION
+   ============================================ */
+
+.cyber-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.cyber-project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dark .cyber-project-card {
+  background: rgba(0, 229, 255, 0.03);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.dark .cyber-project-card:hover {
+  border-color: rgba(217, 70, 239, 0.3);
+  box-shadow: 0 0 25px rgba(217, 70, 239, 0.1);
+  transform: translateY(-3px);
+}
+
+.cyber-project-card {
+  background: rgba(0, 121, 135, 0.03);
+  border: 1px solid rgba(0, 121, 135, 0.1);
+}
+
+.cyber-project-card:hover {
+  border-color: rgba(0, 121, 135, 0.3);
+  transform: translateY(-3px);
+}
+
+.cyber-project-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.dark .cyber-project-title {
+  color: rgba(226, 232, 240, 0.95);
+}
+
+.cyber-project-title {
+  color: rgb(0, 50, 60);
+}
+
+.cyber-project-impact {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  font-style: italic;
+  margin: 0 0 0.8rem;
+}
+
+.dark .cyber-project-impact {
+  color: rgb(0, 229, 255);
+}
+
+.cyber-project-impact {
+  color: rgb(0, 121, 135);
+}
+
+.cyber-project-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  flex-grow: 1;
+}
+
+.dark .cyber-project-desc {
+  color: rgba(226, 232, 240, 0.65);
+}
+
+.cyber-project-desc {
+  color: rgba(0, 50, 60, 0.7);
+}
+
+.cyber-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.cyber-project-link {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.dark .cyber-project-link {
+  color: rgba(0, 229, 255, 0.6);
+}
+
+.dark .cyber-project-card:hover .cyber-project-link {
+  color: rgb(0, 229, 255);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+.cyber-project-link {
+  color: rgba(0, 121, 135, 0.6);
+}
+
+.cyber-project-card:hover .cyber-project-link {
+  color: rgb(0, 121, 135);
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+
+.cyber-contact {
+  text-align: center;
+}
+
+.cyber-contact > p {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.dark .cyber-contact > p {
+  color: rgba(226, 232, 240, 0.7);
+}
+
+.cyber-contact > p {
+  color: rgba(0, 50, 60, 0.7);
+}
+
+.cyber-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cyber-contact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.dark .cyber-contact-cta {
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  color: rgb(0, 229, 255);
+}
+
+.dark .cyber-contact-cta:hover {
+  background: rgba(0, 229, 255, 0.15);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+}
+
+.cyber-contact-cta {
+  background: rgba(0, 121, 135, 0.08);
+  border: 1px solid rgba(0, 121, 135, 0.25);
+  color: rgb(0, 121, 135);
+}
+
+.cyber-contact-cta:hover {
+  background: rgba(0, 121, 135, 0.15);
+  border-color: rgba(0, 121, 135, 0.5);
+}
+
+.dark .cyber-contact-secondary {
+  background: transparent;
+  border-color: rgba(0, 229, 255, 0.15);
+  color: rgba(226, 232, 240, 0.6);
+}
+
+.dark .cyber-contact-secondary:hover {
+  color: rgb(0, 229, 255);
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+.cyber-contact-secondary {
+  background: transparent;
+  border-color: rgba(0, 121, 135, 0.15);
+  color: rgba(0, 121, 135, 0.6);
+}
+
+/* ============================================
+   SINGLE-PAGE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .cyber-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .cyber-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .cyber-projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cyber-contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cyber-contact-cta {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .cyber-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .cyber-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .cyber-timeline-item {
+    padding-left: 1rem;
+  }
+
+  .cyber-skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   ENHANCEMENT: TERMINAL-STYLE ABOUT
+   ============================================ */
+
+.cyber-terminal {
+  max-width: 48rem;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.dark .cyber-terminal {
+  background: rgba(10, 15, 20, 0.9);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.05);
+}
+
+.cyber-terminal {
+  background: rgba(240, 248, 250, 0.95);
+  border: 1px solid rgba(0, 121, 135, 0.2);
+}
+
+.cyber-terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.72rem;
+}
+
+.dark .cyber-terminal-header {
+  background: rgba(0, 229, 255, 0.06);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+  color: rgba(226, 232, 240, 0.5);
+}
+
+.cyber-terminal-header {
+  background: rgba(0, 121, 135, 0.06);
+  border-bottom: 1px solid rgba(0, 121, 135, 0.1);
+  color: rgba(0, 50, 60, 0.5);
+}
+
+.cyber-terminal-dots {
+  display: flex;
+  gap: 6px;
+  margin-right: 0.5rem;
+}
+
+.cyber-terminal-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.cyber-terminal-dots span:hover {
+  opacity: 0.7;
+}
+
+.cyber-terminal-dots span:nth-child(1) { background: #ff5f57; }
+.cyber-terminal-dots span:nth-child(2) { background: #febc2e; }
+.cyber-terminal-dots span:nth-child(3) { background: #28c840; }
+
+.cyber-terminal-body {
+  padding: 1.2rem 1.5rem;
+}
+
+.cyber-terminal-cmd {
+  margin-bottom: 0.3rem;
+}
+
+.dark .cyber-terminal-cmd { color: rgb(0, 229, 255); }
+.cyber-terminal-cmd { color: rgb(0, 121, 135); }
+
+.cyber-terminal-output {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.dark .cyber-terminal-output { color: rgba(226, 232, 240, 0.75); }
+.cyber-terminal-output { color: rgba(0, 50, 60, 0.8); }
+
+.dark .cyber-terminal-output strong { color: rgb(0, 229, 255); }
+.cyber-terminal-output strong { color: rgb(0, 121, 135); }
+
+.cyber-terminal-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dark .cyber-terminal-link { color: rgba(0, 229, 255, 0.6); }
+.dark .cyber-terminal-link:hover { color: rgb(0, 229, 255); text-shadow: 0 0 8px rgba(0, 229, 255, 0.3); }
+.cyber-terminal-link { color: rgba(0, 121, 135, 0.7); }
+.cyber-terminal-link:hover { color: rgb(0, 121, 135); }
+
+/* ============================================
+   ENHANCEMENT: BENTO STATS GRID
+   ============================================ */
+
+.cyber-stats {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+}
+
+.cyber-stat-featured {
+  grid-column: span 2;
+}
+
+.cyber-stat-featured .cyber-stat-number {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+.dark .cyber-stat-featured {
+  background: rgba(0, 229, 255, 0.05);
+  border-color: rgba(0, 229, 255, 0.2);
+}
+
+.cyber-stat-featured {
+  background: rgba(0, 121, 135, 0.05);
+  border-color: rgba(0, 121, 135, 0.15);
+}
+
+/* ============================================
+   ENHANCEMENT: ANIMATED GRADIENT DIVIDERS
+   ============================================ */
+
+.dark .cyber-section + .cyber-section {
+  border-top: none;
+  position: relative;
+}
+
+.cyber-section + .cyber-section {
+  border-top: none;
+  position: relative;
+}
+
+.cyber-section + .cyber-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 30rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 121, 135, 0.3), rgba(0, 121, 135, 0.5), rgba(0, 121, 135, 0.3), transparent);
+  animation: cyber-divider-sweep 4s ease-in-out infinite;
+}
+
+.dark .cyber-section + .cyber-section::before {
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.2), rgba(217, 70, 239, 0.3), rgba(0, 229, 255, 0.2), transparent);
+}
+
+@keyframes cyber-divider-sweep {
+  0%, 100% { opacity: 0.5; background-position: -200% center; }
+  50% { opacity: 1; background-position: 200% center; }
+}
+
+/* ============================================
+   ENHANCEMENT: COLORED TECH BADGES
+   ============================================ */
+
+.cyber-skill-badge[data-color="docker"]    { border-color: #2496ED40; }
+.cyber-skill-badge[data-color="k8s"]       { border-color: #326CE540; }
+.cyber-skill-badge[data-color="aws"]       { border-color: #FF990040; }
+.cyber-skill-badge[data-color="gcp"]       { border-color: #4285F440; }
+.cyber-skill-badge[data-color="terraform"] { border-color: #7B42BC40; }
+.cyber-skill-badge[data-color="ansible"]   { border-color: #EE000040; }
+.cyber-skill-badge[data-color="jenkins"]   { border-color: #D2492440; }
+.cyber-skill-badge[data-color="github"]    { border-color: #2088FF40; }
+.cyber-skill-badge[data-color="python"]    { border-color: #3776AB40; }
+.cyber-skill-badge[data-color="linux"]     { border-color: #FCC62440; }
+.cyber-skill-badge[data-color="kafka"]     { border-color: #231F2040; }
+.cyber-skill-badge[data-color="redis"]     { border-color: #DC382D40; }
+.cyber-skill-badge[data-color="postgres"]  { border-color: #33679140; }
+.cyber-skill-badge[data-color="nginx"]     { border-color: #00973240; }
+.cyber-skill-badge[data-color="grafana"]   { border-color: #F4680040; }
+.cyber-skill-badge[data-color="prom"]      { border-color: #E6522C40; }
+.cyber-skill-badge[data-color="argocd"]    { border-color: #EF732540; }
+.cyber-skill-badge[data-color="cloudflare"]{ border-color: #F3870140; }
+.cyber-skill-badge[data-color="oracle"]    { border-color: #F8000040; }
+.cyber-skill-badge[data-color="do"]        { border-color: #006AFF40; }
+.cyber-skill-badge[data-color="pulumi"]    { border-color: #8A315340; }
+
+.dark .cyber-skill-badge[data-color="docker"]:hover    { color: #2496ED; border-color: #2496ED80; box-shadow: 0 0 8px #2496ED30; }
+.dark .cyber-skill-badge[data-color="k8s"]:hover       { color: #326CE5; border-color: #326CE580; box-shadow: 0 0 8px #326CE530; }
+.dark .cyber-skill-badge[data-color="aws"]:hover       { color: #FF9900; border-color: #FF990080; box-shadow: 0 0 8px #FF990030; }
+.dark .cyber-skill-badge[data-color="gcp"]:hover       { color: #4285F4; border-color: #4285F480; box-shadow: 0 0 8px #4285F430; }
+.dark .cyber-skill-badge[data-color="terraform"]:hover { color: #7B42BC; border-color: #7B42BC80; box-shadow: 0 0 8px #7B42BC30; }
+.dark .cyber-skill-badge[data-color="ansible"]:hover   { color: #EE0000; border-color: #EE000080; box-shadow: 0 0 8px #EE000030; }
+.dark .cyber-skill-badge[data-color="jenkins"]:hover   { color: #D24924; border-color: #D2492480; box-shadow: 0 0 8px #D2492430; }
+.dark .cyber-skill-badge[data-color="github"]:hover    { color: #2088FF; border-color: #2088FF80; box-shadow: 0 0 8px #2088FF30; }
+.dark .cyber-skill-badge[data-color="python"]:hover    { color: #3776AB; border-color: #3776AB80; box-shadow: 0 0 8px #3776AB30; }
+.dark .cyber-skill-badge[data-color="linux"]:hover     { color: #FCC624; border-color: #FCC62480; box-shadow: 0 0 8px #FCC62430; }
+.dark .cyber-skill-badge[data-color="kafka"]:hover     { color: #fff; border-color: #ffffff60; box-shadow: 0 0 8px #ffffff20; }
+.dark .cyber-skill-badge[data-color="redis"]:hover     { color: #DC382D; border-color: #DC382D80; box-shadow: 0 0 8px #DC382D30; }
+.dark .cyber-skill-badge[data-color="postgres"]:hover  { color: #336791; border-color: #33679180; box-shadow: 0 0 8px #33679130; }
+.dark .cyber-skill-badge[data-color="nginx"]:hover     { color: #009732; border-color: #00973280; box-shadow: 0 0 8px #00973230; }
+.dark .cyber-skill-badge[data-color="grafana"]:hover   { color: #F46800; border-color: #F4680080; box-shadow: 0 0 8px #F4680030; }
+.dark .cyber-skill-badge[data-color="prom"]:hover      { color: #E6522C; border-color: #E6522C80; box-shadow: 0 0 8px #E6522C30; }
+.dark .cyber-skill-badge[data-color="argocd"]:hover    { color: #EF7325; border-color: #EF732580; box-shadow: 0 0 8px #EF732530; }
+.dark .cyber-skill-badge[data-color="cloudflare"]:hover{ color: #F38701; border-color: #F3870180; box-shadow: 0 0 8px #F3870130; }
+.dark .cyber-skill-badge[data-color="oracle"]:hover    { color: #F80000; border-color: #F8000080; box-shadow: 0 0 8px #F8000030; }
+.dark .cyber-skill-badge[data-color="do"]:hover        { color: #006AFF; border-color: #006AFF80; box-shadow: 0 0 8px #006AFF30; }
+.dark .cyber-skill-badge[data-color="pulumi"]:hover    { color: #8A3153; border-color: #8A315380; box-shadow: 0 0 8px #8A315330; }
+
+/* ============================================
+   ENHANCEMENT: HOVER-REVEAL PROJECT CARDS
+   ============================================ */
+
+.cyber-project-desc,
+.cyber-project-tags,
+.cyber-project-link {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.cyber-project-card:hover .cyber-project-desc,
+.cyber-project-card:hover .cyber-project-tags,
+.cyber-project-card:hover .cyber-project-link {
+  opacity: 1;
+  max-height: 300px;
+}
+
+/* Touch devices: always show content */
+@media (hover: none) {
+  .cyber-project-desc,
+  .cyber-project-tags,
+  .cyber-project-link {
+    opacity: 1;
+    max-height: none;
+  }
+}
+
+/* ============================================
+   ENHANCEMENT: NOISE TEXTURE OVERLAY
+   ============================================ */
+
+.dark body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px;
+}
+
+/* ============================================
+   ENHANCEMENT: FLOATING TERMINAL WIDGET
+   ============================================ */
+
+.cyber-mini-terminal {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9990;
+}
+
+.cyber-mini-terminal-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.dark .cyber-mini-terminal-btn {
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  color: rgb(0, 229, 255);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+}
+
+.dark .cyber-mini-terminal-btn:hover {
+  background: rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.2);
+}
+
+.cyber-mini-terminal-btn {
+  background: rgba(0, 121, 135, 0.1);
+  border: 1px solid rgba(0, 121, 135, 0.25);
+  color: rgb(0, 121, 135);
+}
+
+.cyber-mini-terminal-window {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 340px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: none;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+}
+
+.cyber-mini-terminal-window.open {
+  display: block;
+  animation: cyber-terminal-open 0.2s ease;
+}
+
+@keyframes cyber-terminal-open {
+  from { opacity: 0; transform: translateY(10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.dark .cyber-mini-terminal-window {
+  background: rgba(10, 15, 20, 0.95);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+}
+
+.cyber-mini-terminal-window {
+  background: rgba(245, 250, 252, 0.98);
+  border: 1px solid rgba(0, 121, 135, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cyber-mini-terminal-output {
+  padding: 0.8rem;
+  max-height: 200px;
+  overflow-y: auto;
+  line-height: 1.6;
+}
+
+.dark .cyber-mini-terminal-output { color: rgba(226, 232, 240, 0.7); }
+.cyber-mini-terminal-output { color: rgba(0, 50, 60, 0.8); }
+
+.cyber-mini-terminal-output .cmd { margin-bottom: 0.2rem; }
+.dark .cyber-mini-terminal-output .cmd { color: rgb(0, 229, 255); }
+.cyber-mini-terminal-output .cmd { color: rgb(0, 121, 135); }
+
+.cyber-mini-terminal-output .result { margin-bottom: 0.5rem; padding-left: 0.5rem; }
+
+.cyber-mini-terminal-input-row {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+}
+
+.dark .cyber-mini-terminal-input-row {
+  border-top: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.cyber-mini-terminal-input-row {
+  border-top: 1px solid rgba(0, 121, 135, 0.1);
+}
+
+.cyber-mini-terminal-input-row span {
+  margin-right: 0.4rem;
+}
+
+.dark .cyber-mini-terminal-input-row span { color: rgb(0, 229, 255); }
+.cyber-mini-terminal-input-row span { color: rgb(0, 121, 135); }
+
+.cyber-mini-terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+}
+
+.dark .cyber-mini-terminal-input { color: rgba(226, 232, 240, 0.9); }
+.cyber-mini-terminal-input { color: rgba(0, 50, 60, 0.9); }
+
+/* ============================================
+   BENTO & TERMINAL RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .cyber-stat-featured {
+    grid-column: span 2;
+  }
+
+  .cyber-mini-terminal-window {
+    width: 280px;
+    right: -0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .cyber-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cyber-stat-featured {
+    grid-column: span 2;
+  }
+
+  .cyber-terminal-body {
+    padding: 1rem;
+    font-size: 0.78rem;
   }
 }

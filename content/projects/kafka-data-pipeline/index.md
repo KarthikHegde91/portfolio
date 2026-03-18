@@ -5,6 +5,7 @@ date: 2026-03-11
 draft: false
 tags: ["Apache Kafka", "PostgreSQL", "Redis", "BigQuery", "Data Pipeline"]
 showTableOfContents: true
+impact: "Real-time event streaming pipeline"
 ---
 
 ## Overview

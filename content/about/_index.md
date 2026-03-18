@@ -67,74 +67,105 @@ MCA graduate from **B.M.S College of Engineering, Bengaluru** (2020–2022).
 
 ## Technical Skills
 
-### CI/CD & Release Engineering
-{{< badge >}}GitHub Actions (primary){{< /badge >}}
-{{< badge >}}Jenkins{{< /badge >}}
-{{< badge >}}Multi-platform releases (Android/iOS/Windows/macOS){{< /badge >}}
-
-### Containers & Orchestration
-{{< badge >}}Docker{{< /badge >}}
-{{< badge >}}Kubernetes{{< /badge >}}
-{{< badge >}}ArgoCD{{< /badge >}}
-
-### Infrastructure as Code
-{{< badge >}}Pulumi (primary){{< /badge >}}
-{{< badge >}}Terraform{{< /badge >}}
-{{< badge >}}Ansible{{< /badge >}}
-
-### Cloud Platforms
-{{< badge >}}DigitalOcean{{< /badge >}}
-{{< badge >}}Google Cloud Platform{{< /badge >}}
-{{< badge >}}AWS{{< /badge >}}
-{{< badge >}}Oracle Cloud{{< /badge >}}
-{{< badge >}}Cloudflare{{< /badge >}}
-
-### Networking & Security
-{{< badge >}}Nginx (reverse proxy){{< /badge >}}
-{{< badge >}}DNS Management{{< /badge >}}
-{{< badge >}}SSL/TLS (Let's Encrypt){{< /badge >}}
-{{< badge >}}Firewalls / Security Groups{{< /badge >}}
-{{< badge >}}IAM / RBAC{{< /badge >}}
-
-### Secrets Management
-{{< badge >}}GitHub Secrets{{< /badge >}}
-{{< badge >}}Infisical{{< /badge >}}
-{{< badge >}}Google Secret Manager{{< /badge >}}
-
-### Programming & Scripting
-{{< badge >}}Python{{< /badge >}}
-{{< badge >}}Bash{{< /badge >}}
-{{< badge >}}Linux (Ubuntu, RHEL){{< /badge >}}
-{{< badge >}}Cron / Scheduled Automation{{< /badge >}}
-
-### Monitoring & Observability
-{{< badge >}}Prometheus (setup + maintenance){{< /badge >}}
-{{< badge >}}Grafana (dashboards + alerting){{< /badge >}}
-{{< badge >}}CloudWatch{{< /badge >}}
-{{< badge >}}VictoriaMetrics{{< /badge >}}
-{{< badge >}}Uptime Kuma{{< /badge >}}
-
-### Data & Messaging
-{{< badge >}}Apache Kafka{{< /badge >}}
-{{< badge >}}PostgreSQL (replication){{< /badge >}}
-{{< badge >}}Redis{{< /badge >}}
-{{< badge >}}BigQuery{{< /badge >}}
-
-### AI-Assisted Engineering
-{{< badge >}}Claude Code (agentic coding){{< /badge >}}
-{{< badge >}}Prompt Engineering{{< /badge >}}
-{{< badge >}}AI-Assisted DevOps Workflows{{< /badge >}}
-
-### Operational Excellence
-{{< badge >}}Disaster Recovery / Backup Automation{{< /badge >}}
-{{< badge >}}Cost Optimization{{< /badge >}}
-{{< badge >}}Runbooks / Documentation{{< /badge >}}
-{{< badge >}}On-Call / Incident Response{{< /badge >}}
-
-### Tools & Workflow
-{{< badge >}}Git{{< /badge >}}
-{{< badge >}}JIRA{{< /badge >}}
-{{< badge >}}Scrum / Kanban{{< /badge >}}
+<div class="cyber-skills-grid">
+  <div class="cyber-skill-category">
+    <h3>CI/CD & Release</h3>
+    <div class="cyber-skill-badges">
+      <span class="cyber-skill-badge">GitHub Actions</span>
+      <span class="cyber-skill-badge">Jenkins</span>
+      <span class="cyber-skill-badge">Shorebird</span>
+      <span class="cyber-skill-badge">Fastlane</span>
+      <span class="cyber-skill-badge">Multi-platform</span>
+    </div>
+  </div>
+  <div class="cyber-skill-category">
+    <h3>Cloud Platforms</h3>
+    <div class="cyber-skill-badges">
+      <span class="cyber-skill-badge">AWS</span>
+      <span class="cyber-skill-badge">GCP</span>
+      <span class="cyber-skill-badge">DigitalOcean</span>
+      <span class="cyber-skill-badge">Oracle Cloud</span>
+      <span class="cyber-skill-badge">Cloudflare</span>
+    </div>
+  </div>
+  <div class="cyber-skill-category">
+    <h3>Containers & IaC</h3>
+    <div class="cyber-skill-badges">
+      <span class="cyber-skill-badge">Docker</span>
+      <span class="cyber-skill-badge">Kubernetes</span>
+      <span class="cyber-skill-badge">ArgoCD</span>
+      <span class="cyber-skill-badge">Terraform</span>
+      <span class="cyber-skill-badge">Pulumi</span>
+      <span class="cyber-skill-badge">Ansible</span>
+    </div>
+  </div>
+  <div class="cyber-skill-category">
+    <h3>Networking & Security</h3>
+    <div class="cyber-skill-badges">
+      <span class="cyber-skill-badge">Nginx</span>
+      <span class="cyber-skill-badge">DNS</span>
+      <span class="cyber-skill-badge">SSL/TLS</span>
+      <span class="cyber-skill-badge">Firewalls</span>
+      <span class="cyber-skill-badge">IAM / RBAC</span>
+    </div>
+  </div>
+  <div class="cyber-skill-category">
+    <h3>Monitoring</h3>
+    <div class="cyber-skill-badges">
+      <span class="cyber-skill-badge">Prometheus</span>
+      <span class="cyber-skill-badge">Grafana</span>
+      <span class="cyber-skill-badge">VictoriaMetrics</span>
+      <span class="cyber-skill-badge">CloudWatch</span>
+      <span class="cyber-skill-badge">Uptime Kuma</span>
+    </div>
+  </div>
+  <div class="cyber-skill-category">
+    <h3>Data & Messaging</h3>
+    <div class="cyber-skill-badges">
+      <span class="cyber-skill-badge">Apache Kafka</span>
+      <span class="cyber-skill-badge">PostgreSQL</span>
+      <span class="cyber-skill-badge">Redis</span>
+      <span class="cyber-skill-badge">BigQuery</span>
+    </div>
+  </div>
+  <div class="cyber-skill-category">
+    <h3>Secrets Management</h3>
+    <div class="cyber-skill-badges">
+      <span class="cyber-skill-badge">GitHub Secrets</span>
+      <span class="cyber-skill-badge">Infisical</span>
+      <span class="cyber-skill-badge">Google Secret Manager</span>
+    </div>
+  </div>
+  <div class="cyber-skill-category">
+    <h3>Programming & OS</h3>
+    <div class="cyber-skill-badges">
+      <span class="cyber-skill-badge">Python</span>
+      <span class="cyber-skill-badge">Bash</span>
+      <span class="cyber-skill-badge">Linux</span>
+      <span class="cyber-skill-badge">Nginx</span>
+      <span class="cyber-skill-badge">Git</span>
+    </div>
+  </div>
+  <div class="cyber-skill-category">
+    <h3>AI Engineering</h3>
+    <div class="cyber-skill-badges">
+      <span class="cyber-skill-badge">Claude Code</span>
+      <span class="cyber-skill-badge">Prompt Engineering</span>
+      <span class="cyber-skill-badge">AI-Assisted DevOps</span>
+    </div>
+  </div>
+  <div class="cyber-skill-category">
+    <h3>Ops & Workflow</h3>
+    <div class="cyber-skill-badges">
+      <span class="cyber-skill-badge">DR / Backups</span>
+      <span class="cyber-skill-badge">Cost Optimization</span>
+      <span class="cyber-skill-badge">Runbooks</span>
+      <span class="cyber-skill-badge">On-Call</span>
+      <span class="cyber-skill-badge">JIRA</span>
+      <span class="cyber-skill-badge">Scrum / Kanban</span>
+    </div>
+  </div>
+</div>
 
 ---
 

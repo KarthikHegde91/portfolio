@@ -5,6 +5,7 @@ date: 2026-03-13
 draft: false
 tags: ["GitHub Actions", "CI/CD", "Flutter", "Docker", "Shorebird"]
 showTableOfContents: true
+impact: "2hr manual builds → 15min automated"
 ---
 
 ## Overview

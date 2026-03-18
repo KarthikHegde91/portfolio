@@ -9,7 +9,7 @@ enableSearch = true
 enableCodeCopy = true
 
 [header]
-  layout = "basic"
+  layout = "fixed"
 
 [footer]
   showMenu = true

@@ -2,12 +2,12 @@
 
 [[main]]
   name = "About"
-  pageRef = "about"
+  url = "/#about"
   weight = 10
 
 [[main]]
   name = "Projects"
-  pageRef = "projects"
+  url = "/#projects"
   weight = 20
 
 [[main]]
@@ -23,16 +23,6 @@
     external = true
 
 [[main]]
-  name = "Services"
-  pageRef = "services"
+  name = "Contact"
+  url = "/#contact"
   weight = 40
-
-[[main]]
-  name = "Status"
-  pageRef = "status"
-  weight = 50
-
-[[main]]
-  name = "Grafana"
-  pageRef = "grafana"
-  weight = 60

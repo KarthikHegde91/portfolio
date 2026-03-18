@@ -5,6 +5,7 @@ date: 2026-03-12
 draft: false
 tags: ["Hugo", "Cloudflare Pages", "Oracle Cloud", "K3s", "ArgoCD", "Terraform", "GitOps"]
 showTableOfContents: true
+impact: "$0/month production infrastructure"
 ---
 
 ## Overview

@@ -1,18 +1,21 @@
-<section class="cyber-hero">
+{{/* ============================================
+    SCROLL PROGRESS BAR
+    ============================================ */}}
+<div class="cyber-progress-bar" id="cyber-progress"></div>
 
-  {{/* Name — large neon typography with glitch */}}
+{{/* ============================================
+    SECTION 1: HERO
+    ============================================ */}}
+<section id="hero" class="cyber-hero">
+
   <h1 class="cyber-glitch cyber-name">KARTHIK B HEGDE</h1>
-
-  {{/* Static subtitle — always visible */}}
   <p class="cyber-subtitle">DevOps Engineer</p>
 
-  {{/* Typed.js — rotating skill lines */}}
   <div class="cyber-typed-area">
     <span class="cyber-prompt">&gt;</span>
     <span id="cyber-typed"></span>
   </div>
 
-  {{/* Social icons */}}
   <div class="cyber-socials">
     <a href="https://github.com/KarthikHegde91" target="_blank" rel="noopener" aria-label="GitHub" class="cyber-social-link">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
@@ -25,60 +28,276 @@
     </a>
   </div>
 
-  {{/* Resume download CTA */}}
   <a href="/Karthik_B_Hegde_Resume.pdf" class="cyber-resume-cta" target="_blank" rel="noopener">
     Download Resume &darr;
   </a>
 
-  {{/* Scroll indicator */}}
+  <div class="cyber-ticker">
+    <span class="cyber-ticker-label">&gt; Currently building:</span>
+    <span class="cyber-ticker-text">$0/month K3s infrastructure on Oracle Cloud</span>
+  </div>
+
   <div class="cyber-scroll-hint" aria-hidden="true">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
   </div>
 
 </section>
 
-{{/* Stats section */}}
-<section class="cyber-stats">
+{{/* ============================================
+    SECTION 2: BENTO STATS
+    ============================================ */}}
+<section id="stats" class="cyber-stats">
   <div class="cyber-stat">
-    <span class="cyber-stat-number">3+</span>
+    <span class="cyber-stat-number" data-target="3" data-suffix="+">0</span>
     <span class="cyber-stat-label">Years Experience</span>
   </div>
   <div class="cyber-stat">
-    <span class="cyber-stat-number">4</span>
+    <span class="cyber-stat-number" data-target="4" data-suffix="">0</span>
     <span class="cyber-stat-label">Platforms Shipped</span>
   </div>
   <div class="cyber-stat">
-    <span class="cyber-stat-number">10+</span>
+    <span class="cyber-stat-number" data-target="10" data-suffix="+">0</span>
     <span class="cyber-stat-label">Engineers Supported</span>
   </div>
-  <div class="cyber-stat">
-    <span class="cyber-stat-number">$0</span>
+  <div class="cyber-stat cyber-stat-featured">
+    <span class="cyber-stat-number" data-target="0" data-prefix="$" data-suffix="">0</span>
     <span class="cyber-stat-label">Monthly Infra Cost</span>
   </div>
 </section>
 
-{{/* Page content from _index.md (if any) */}}
-{{ with .Content }}
-<section class="prose dark:prose-invert mx-auto mt-8 max-w-3xl px-4">
-  {{ . }}
-</section>
-{{ end }}
+{{/* ============================================
+    SECTION 3: TERMINAL-STYLE ABOUT
+    ============================================ */}}
+<section id="about" class="cyber-section">
+  <h2 class="cyber-section-title">About Me</h2>
+  <div class="cyber-terminal">
+    <div class="cyber-terminal-header">
+      <div class="cyber-terminal-dots"><span></span><span></span><span></span></div>
+      karthik@portfolio:~
+    </div>
+    <div class="cyber-terminal-body">
+      <div class="cyber-terminal-cmd">$ whoami</div>
+      <div class="cyber-terminal-output">
+        DevOps Engineer who builds things to understand them. Curious by default &mdash; if there&rsquo;s a tool I haven&rsquo;t used, I&rsquo;ll build something with it.
+      </div>
 
-{{/* Recent articles — only show if there are actual posts */}}
+      <div class="cyber-terminal-cmd">$ cat experience.txt</div>
+      <div class="cyber-terminal-output">
+        <strong>3+ years</strong> @ Appsndevices Technologies, Bengaluru<br>
+        Shipping daily to <strong>4 platforms</strong> &middot; Managing multi-cloud infra (AWS, GCP, DigitalOcean)<br>
+        Supporting <strong>10+ engineers</strong> &middot; Running on a <strong>$0 budget</strong>
+      </div>
+
+      <div class="cyber-terminal-cmd">$ cat education.txt</div>
+      <div class="cyber-terminal-output">
+        MCA &mdash; <strong>B.M.S College of Engineering</strong>, Bengaluru (2020&ndash;2022)
+      </div>
+
+      <div class="cyber-terminal-cmd">$ cat current_project.txt</div>
+      <div class="cyber-terminal-output">
+        Building this entire portfolio infrastructure from scratch &mdash; K3s on Oracle Cloud, ArgoCD GitOps, Terraform IaC, Cloudflare Tunnel &mdash; just to learn it.
+      </div>
+
+      <a href="/about/" class="cyber-terminal-link">$ cat full_background.txt &rarr;</a>
+    </div>
+  </div>
+</section>
+
+{{/* ============================================
+    SECTION 4: SKILLS (with colored badges)
+    ============================================ */}}
+<section id="skills" class="cyber-section">
+  <h2 class="cyber-section-title">Technical Skills</h2>
+  <div class="cyber-skills-grid">
+
+    <div class="cyber-skill-category">
+      <h3>CI/CD & Release</h3>
+      <div class="cyber-skill-badges">
+        <span class="cyber-skill-badge" data-color="github">GitHub Actions</span>
+        <span class="cyber-skill-badge" data-color="jenkins">Jenkins</span>
+        <span class="cyber-skill-badge">Shorebird</span>
+        <span class="cyber-skill-badge">Fastlane</span>
+      </div>
+    </div>
+
+    <div class="cyber-skill-category">
+      <h3>Cloud Platforms</h3>
+      <div class="cyber-skill-badges">
+        <span class="cyber-skill-badge" data-color="aws">AWS</span>
+        <span class="cyber-skill-badge" data-color="gcp">GCP</span>
+        <span class="cyber-skill-badge" data-color="do">DigitalOcean</span>
+        <span class="cyber-skill-badge" data-color="oracle">Oracle Cloud</span>
+        <span class="cyber-skill-badge" data-color="cloudflare">Cloudflare</span>
+      </div>
+    </div>
+
+    <div class="cyber-skill-category">
+      <h3>Containers & IaC</h3>
+      <div class="cyber-skill-badges">
+        <span class="cyber-skill-badge" data-color="docker">Docker</span>
+        <span class="cyber-skill-badge" data-color="k8s">Kubernetes</span>
+        <span class="cyber-skill-badge" data-color="argocd">ArgoCD</span>
+        <span class="cyber-skill-badge" data-color="terraform">Terraform</span>
+        <span class="cyber-skill-badge" data-color="pulumi">Pulumi</span>
+        <span class="cyber-skill-badge" data-color="ansible">Ansible</span>
+      </div>
+    </div>
+
+    <div class="cyber-skill-category">
+      <h3>Monitoring</h3>
+      <div class="cyber-skill-badges">
+        <span class="cyber-skill-badge" data-color="prom">Prometheus</span>
+        <span class="cyber-skill-badge" data-color="grafana">Grafana</span>
+        <span class="cyber-skill-badge">VictoriaMetrics</span>
+        <span class="cyber-skill-badge">CloudWatch</span>
+        <span class="cyber-skill-badge">Uptime Kuma</span>
+      </div>
+    </div>
+
+    <div class="cyber-skill-category">
+      <h3>Data & Messaging</h3>
+      <div class="cyber-skill-badges">
+        <span class="cyber-skill-badge" data-color="kafka">Apache Kafka</span>
+        <span class="cyber-skill-badge" data-color="postgres">PostgreSQL</span>
+        <span class="cyber-skill-badge" data-color="redis">Redis</span>
+        <span class="cyber-skill-badge">BigQuery</span>
+      </div>
+    </div>
+
+    <div class="cyber-skill-category">
+      <h3>Programming & OS</h3>
+      <div class="cyber-skill-badges">
+        <span class="cyber-skill-badge" data-color="python">Python</span>
+        <span class="cyber-skill-badge">Bash</span>
+        <span class="cyber-skill-badge" data-color="linux">Linux</span>
+        <span class="cyber-skill-badge" data-color="nginx">Nginx</span>
+        <span class="cyber-skill-badge">Git</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{{/* ============================================
+    SECTION 5: EXPERIENCE
+    ============================================ */}}
+<section id="experience" class="cyber-section">
+  <h2 class="cyber-section-title">Experience</h2>
+  <div class="cyber-timeline">
+    <div class="cyber-timeline-item">
+      <span class="cyber-timeline-date">Nov 2022 – Present</span>
+      <h3 class="cyber-timeline-role">DevOps Engineer</h3>
+      <p class="cyber-timeline-company">Appsndevices Technologies Pvt. Ltd. — Bengaluru</p>
+      <ul class="cyber-timeline-details">
+        <li>Built CI/CD pipelines with GitHub Actions shipping daily to Android, iOS, Windows & macOS from a single codebase</li>
+        <li>Managed multi-cloud infrastructure across AWS, GCP, and DigitalOcean — including cost optimization and security hardening</li>
+        <li>Set up Prometheus + Grafana monitoring, Kafka event streaming, and PostgreSQL replication for production systems</li>
+        <li>Containerized services with Docker & Kubernetes, automated infrastructure with Terraform and Pulumi</li>
+      </ul>
+    </div>
+    <div class="cyber-timeline-item">
+      <span class="cyber-timeline-date">2020 – 2022</span>
+      <h3 class="cyber-timeline-role">Master of Computer Applications</h3>
+      <p class="cyber-timeline-company">B.M.S College of Engineering, Bengaluru</p>
+    </div>
+  </div>
+</section>
+
+{{/* ============================================
+    SECTION 6: PROJECTS (hover-reveal)
+    ============================================ */}}
+<section id="projects" class="cyber-section">
+  <h2 class="cyber-section-title">Projects</h2>
+  <div class="cyber-projects-grid">
+    {{ range (where .Site.RegularPages "Section" "projects").ByDate.Reverse }}
+    <a href="{{ .Permalink }}" class="cyber-project-card">
+      <h3 class="cyber-project-title">{{ .Title }}</h3>
+      {{ with .Params.impact }}
+      <p class="cyber-project-impact">{{ . }}</p>
+      {{ end }}
+      <p class="cyber-project-desc">{{ .Description }}</p>
+      <div class="cyber-project-tags">
+        {{ range .Params.tags }}
+        <span class="cyber-skill-badge">{{ . }}</span>
+        {{ end }}
+      </div>
+      <span class="cyber-project-link">View Case Study &rarr;</span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+{{/* ============================================
+    SECTION 7: CONTACT
+    ============================================ */}}
+<section id="contact" class="cyber-section">
+  <h2 class="cyber-section-title">Get In Touch</h2>
+  <div class="cyber-contact">
+    <p>Open to new opportunities, consulting engagements, and collaborations.</p>
+    <div class="cyber-contact-links">
+      <a href="mailto:hello@karthikhegde.in" class="cyber-contact-cta">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        hello@karthikhegde.in
+      </a>
+      <a href="https://github.com/KarthikHegde91" target="_blank" rel="noopener" class="cyber-contact-cta cyber-contact-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/karthik-hegde-9112b6198" target="_blank" rel="noopener" class="cyber-contact-cta cyber-contact-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+{{/* ============================================
+    SECTION 8: RECENT BLOG POSTS
+    ============================================ */}}
 {{ if and .Site.Params.homepage.showRecent (gt (len (where .Site.RegularPages "Section" "blog")) 0) }}
-<section class="cyber-recent">
+<section id="blog" class="cyber-section cyber-recent">
   {{ partial "recent-articles/main.html" . }}
 </section>
 {{ end }}
 
-{{/* Typed.js — loaded here instead of extend-footer to avoid partialCached issue */}}
+{{/* ============================================
+    FLOATING TERMINAL WIDGET
+    ============================================ */}}
+<div class="cyber-mini-terminal">
+  <button class="cyber-mini-terminal-btn" id="terminal-toggle" aria-label="Open terminal">
+    &gt;_
+  </button>
+  <div class="cyber-mini-terminal-window" id="terminal-window">
+    <div class="cyber-terminal-header">
+      <div class="cyber-terminal-dots">
+        <span id="term-dot-close" title="Close"></span>
+        <span id="term-dot-minimize" title="Minimize"></span>
+        <span id="term-dot-clear" title="Clear"></span>
+      </div>
+      visitor@karthikhegde.in
+    </div>
+    <div class="cyber-mini-terminal-output" id="terminal-output">
+      <div class="cmd">$ help</div>
+      <div class="result">Available commands: help, about, skills, projects, contact, resume, clear</div>
+    </div>
+    <div class="cyber-mini-terminal-input-row">
+      <span>$</span>
+      <input type="text" class="cyber-mini-terminal-input" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="type a command...">
+    </div>
+  </div>
+</div>
+
+{{/* ============================================
+    SCRIPTS
+    ============================================ */}}
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script>
-  (function() {
-    var el = document.getElementById('cyber-typed');
-    if (!el) return;
-    function init() {
-      if (typeof Typed === 'undefined') { setTimeout(init, 100); return; }
+(function() {
+  /* ---- TYPED.JS ---- */
+  var el = document.getElementById('cyber-typed');
+  if (el) {
+    function initTyped() {
+      if (typeof Typed === 'undefined') { setTimeout(initTyped, 100); return; }
       new Typed('#cyber-typed', {
         strings: [
           'CI/CD | Kubernetes | Docker | Multi-Cloud',
@@ -86,17 +305,187 @@
           'GitHub Actions \u00b7 Terraform \u00b7 Pulumi \u00b7 Kafka',
           'Prometheus \u00b7 Grafana \u00b7 PostgreSQL \u00b7 Redis',
           'Building production infra on a $0/month budget',
+          'Curious by default \u2014 I build things to learn them',
           'hello@karthikhegde.in'
         ],
-        typeSpeed: 40,
-        backSpeed: 25,
-        backDelay: 2000,
-        startDelay: 600,
-        loop: true,
-        showCursor: true,
-        cursorChar: '\u2588'
+        typeSpeed: 40, backSpeed: 25, backDelay: 2000, startDelay: 600,
+        loop: true, showCursor: true, cursorChar: '\u2588'
       });
     }
-    init();
-  })();
+    initTyped();
+  }
+
+  if (!('IntersectionObserver' in window)) return;
+
+  /* ---- FADE-IN WITH ALTERNATING SLIDES ---- */
+  var sections = document.querySelectorAll('.cyber-section');
+  var fadeObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('cyber-visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(function(section, i) {
+    section.classList.add('cyber-fade-in');
+    section.classList.add(i % 2 === 0 ? 'cyber-slide-left' : 'cyber-slide-right');
+    fadeObserver.observe(section);
+  });
+
+  /* ---- ANIMATED STATS COUNTER ---- */
+  var statsSection = document.getElementById('stats');
+  if (statsSection) {
+    var counted = false;
+    var counterObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !counted) {
+          counted = true;
+          var nums = statsSection.querySelectorAll('.cyber-stat-number[data-target]');
+          nums.forEach(function(el) {
+            var target = parseInt(el.getAttribute('data-target'));
+            var prefix = el.getAttribute('data-prefix') || '';
+            var suffix = el.getAttribute('data-suffix') || '';
+            var duration = 1500;
+            var start = performance.now();
+            function animate(now) {
+              var elapsed = now - start;
+              var progress = Math.min(elapsed / duration, 1);
+              var eased = 1 - Math.pow(1 - progress, 3);
+              var current = Math.round(eased * target);
+              el.textContent = prefix + current + suffix;
+              if (progress < 1) requestAnimationFrame(animate);
+            }
+            requestAnimationFrame(animate);
+          });
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counterObserver.observe(statsSection);
+  }
+
+  /* ---- SCROLL-SPY ACTIVE NAV ---- */
+  var navLinks = document.querySelectorAll('header nav a[href^="/#"]');
+  var sectionIds = [];
+  navLinks.forEach(function(link) {
+    var id = link.getAttribute('href').replace('/#', '');
+    if (document.getElementById(id)) sectionIds.push(id);
+  });
+
+  function updateActiveNav() {
+    var scrollPos = window.scrollY + 120;
+    var current = '';
+    sectionIds.forEach(function(id) {
+      var section = document.getElementById(id);
+      if (section && section.offsetTop <= scrollPos) current = id;
+    });
+    navLinks.forEach(function(link) {
+      var id = link.getAttribute('href').replace('/#', '');
+      link.classList.toggle('cyber-nav-active', id === current);
+    });
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  /* ---- SCROLL PROGRESS BAR ---- */
+  var progressBar = document.getElementById('cyber-progress');
+  if (progressBar) {
+    window.addEventListener('scroll', function() {
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0) + '%';
+    }, { passive: true });
+  }
+
+  /* ---- HERO PARALLAX ---- */
+  var hero = document.querySelector('.cyber-hero');
+  if (hero) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY < window.innerHeight) {
+        hero.style.backgroundPositionY = (window.scrollY * 0.3) + 'px';
+      }
+    }, { passive: true });
+  }
+
+  /* ---- PROJECT CARD 3D TILT ---- */
+  document.querySelectorAll('.cyber-project-card').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var rect = card.getBoundingClientRect();
+      var rotateX = ((e.clientY - rect.top) - rect.height / 2) / (rect.height / 2) * -5;
+      var rotateY = ((e.clientX - rect.left) - rect.width / 2) / (rect.width / 2) * 5;
+      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-3px)';
+    });
+    card.addEventListener('mouseleave', function() { card.style.transform = ''; });
+  });
+
+  /* ---- FLOATING TERMINAL ---- */
+  var termBtn = document.getElementById('terminal-toggle');
+  var termWindow = document.getElementById('terminal-window');
+  var termInput = document.getElementById('terminal-input');
+  var termOutput = document.getElementById('terminal-output');
+
+  if (termBtn && termWindow) {
+    termBtn.addEventListener('click', function() {
+      termWindow.classList.toggle('open');
+      if (termWindow.classList.contains('open')) termInput.focus();
+    });
+
+    /* Terminal dot buttons */
+    var dotClose = document.getElementById('term-dot-close');
+    var dotMinimize = document.getElementById('term-dot-minimize');
+    var dotClear = document.getElementById('term-dot-clear');
+
+    if (dotClose) dotClose.addEventListener('click', function() {
+      termWindow.classList.remove('open');
+    });
+    if (dotMinimize) dotMinimize.addEventListener('click', function() {
+      termWindow.classList.remove('open');
+    });
+    if (dotClear) dotClear.addEventListener('click', function() {
+      termOutput.innerHTML = '<div class="cmd">$ clear</div><div class="result">Terminal cleared.</div>';
+    });
+
+    var commands = {
+      help: 'Available commands: help, about, skills, projects, contact, resume, clear',
+      about: 'DevOps Engineer | 3+ years | Builds things to learn them | hello@karthikhegde.in',
+      skills: 'Docker, K8s, Terraform, AWS, GCP, GitHub Actions, Kafka, Prometheus, Grafana, Python, Bash',
+      projects: '1. Multi-Platform CI/CD Pipeline\n2. Monitoring & Observability Stack\n3. Kafka & Data Pipeline\n4. $0/Month Portfolio Infrastructure',
+      contact: 'Email: hello@karthikhegde.in | GitHub: KarthikHegde91 | LinkedIn: karthik-hegde-9112b6198',
+      resume: 'Opening resume...',
+    };
+
+    termInput.addEventListener('keydown', function(e) {
+      if (e.key !== 'Enter') return;
+      var cmd = termInput.value.trim().toLowerCase();
+      termInput.value = '';
+      if (!cmd) return;
+
+      var cmdDiv = document.createElement('div');
+      cmdDiv.className = 'cmd';
+      cmdDiv.textContent = '$ ' + cmd;
+      termOutput.appendChild(cmdDiv);
+
+      if (cmd === 'clear') {
+        termOutput.innerHTML = '';
+        return;
+      }
+
+      var resultDiv = document.createElement('div');
+      resultDiv.className = 'result';
+
+      if (cmd === 'resume') {
+        resultDiv.textContent = commands.resume;
+        window.open('/Karthik_B_Hegde_Resume.pdf', '_blank');
+      } else if (commands[cmd]) {
+        resultDiv.textContent = commands[cmd];
+      } else {
+        resultDiv.textContent = 'Command not found: ' + cmd + '. Type "help" for available commands.';
+      }
+
+      termOutput.appendChild(resultDiv);
+      termOutput.scrollTop = termOutput.scrollHeight;
+    });
+  }
+})();
 </script>

@@ -5,6 +5,7 @@ date: 2026-03-10
 draft: false
 tags: ["Prometheus", "Grafana", "CloudWatch", "VictoriaMetrics", "Alerting", "Observability"]
 showTableOfContents: true
+impact: "Zero-to-production observability stack"
 ---
 
 ## Overview
