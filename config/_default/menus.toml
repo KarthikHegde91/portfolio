@@ -17,14 +17,14 @@
 
 [[main]]
   name = "Resume"
-  url = "/Karthik_B_Hegde_Resume.pdf"
+  url = "/karthik_b_hegde_resume.pdf"
   weight = 35
   [main.params]
     external = true
 
 [[main]]
   name = "Status"
-  url = "https://status.karthikhegde.in"
+  url = "https://status.karthikhegde.in/status/public"
   weight = 45
   [main.params]
     external = true
