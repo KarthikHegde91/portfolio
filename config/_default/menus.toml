@@ -31,7 +31,7 @@
 
 [[main]]
   name = "Grafana"
-  url = "https://grafana.karthikhegde.in"
+  url = "https://grafana.karthikhegde.in/d/rYdddlPWk/node-exporter-full?orgId=1&from=now-24h&to=now&timezone=browser&refresh=1m"
   weight = 50
   [main.params]
     external = true
