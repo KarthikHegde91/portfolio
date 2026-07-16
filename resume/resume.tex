@@ -1,182 +1,241 @@
-%-------------------------
-% ATS-Optimized DevOps Engineer Resume — 1 Page
-% Author: Karthik B Hegde
-% Compile with: pdflatex or xelatex on Overleaf
-%-------------------------
+\documentclass[10pt, a4paper]{article}
+% NOTE: article only supports 10pt/11pt/12pt — a [9pt] option is silently ignored.
 
-\documentclass[a4paper,10.5pt]{article}
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[top=0.4in, bottom=0.4in, left=0.5in, right=0.5in]{geometry}
-\usepackage{titlesec}
-\usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{xcolor}
-
-% Colors
-\definecolor{linkblue}{HTML}{0056B3}
-\definecolor{sectioncolor}{HTML}{1A1A1A}
-
-% Hyperlink setup
-\hypersetup{
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=1.2 cm, % seperation between body and page edge from the top
+    bottom=1.2 cm, % seperation between body and page edge from the bottom
+    left=1.6 cm, % seperation between body and page edge from the left
+    right=1.6 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm % seperation between body and footer
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 0, 0} % define primary color
+\definecolor{darkblue}{RGB}{0, 39, 120} % accent color for contact links
+\usepackage{enumitem} % for customizing lists
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Karthik B Hegde - Resume},
+    pdfauthor={Karthik B Hegde},
+    pdfcreator={LaTeX},
     colorlinks=true,
-    linkcolor=linkblue,
-    urlcolor=linkblue,
-    pdfborder={0 0 0}
-}
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
 
-% Remove page numbers
-\pagestyle{empty}
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage{cmap} % ToUnicode CMaps so extracted text maps to real characters
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+    \usepackage{charter}
+\else
+    % XeTeX/LuaTeX (e.g. Tectonic): the legacy charter package has no TU-encoding
+    % support, so load the OpenType Charter clone by filename instead.
+    \usepackage{fontspec}
+    \setmainfont{XCharter}[
+        Extension=.otf,
+        UprightFont=*-Roman,
+        BoldFont=*-Bold,
+        ItalicFont=*-Italic,
+        BoldItalicFont=*-BoldItalic
+    ]
+\fi
 
-% Tight section formatting
-\titleformat{\section}{
-    \vspace{-8pt}\normalsize\bfseries\color{sectioncolor}\scshape
-}{}{0em}{}[\titlerule\vspace{-5pt}]
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0.15cm} % set column seperation
+\pagenumbering{gobble} % no page numbering
 
-% Tighter spacing
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt}
-\setlist[itemize]{
-    leftmargin=1.1em,
-    itemsep=1pt,
-    parsep=0pt,
-    topsep=2pt
-}
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
 
-% Reduce line spacing
-\linespread{0.95}
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.16 cm
+}{
+    % bottom space:
+    0.10 cm
+} % section title spacing
 
-%-------------------------
-% Custom commands
-%-------------------------
-\newcommand{\resumeSubheading}[4]{
-    \vspace{3pt}
-    \textbf{#1} \hfill \textit{#2} \\[-1pt]
-    \textit{#3} \hfill \textit{#4}
-    \vspace{1pt}
-}
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.05 cm,
+        parsep=0.04 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
 
-\newcommand{\skillCategory}[2]{
-    \textbf{#1:} #2 \\[1.5pt]
-}
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
 
-\newcommand{\projectHeading}[2]{
-    \vspace{3pt}
-    \textbf{#1} \hfill \href{https://#2}{\textit{#2}}
-    \vspace{1pt}
-}
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
 
-%-------------------------
-% BEGIN DOCUMENT
-%-------------------------
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.15}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
 \begin{document}
 
-%-------------------------
-% HEADER
-%-------------------------
-\begin{center}
-    {\Large\bfseries Karthik B Hegde} \\[4pt]
-    {\small
-    \href{mailto:karthikhegde91@gmail.com}{karthikhegde91@gmail.com} $\vert$
-    +91-87470-77508 $\vert$
-    \href{https://linkedin.com/in/karthikhegde1}{LinkedIn} $\vert$
-    \href{https://github.com/KarthikHegde91}{GitHub} $\vert$
-    \href{https://karthikhegde.in}{\textbf{karthikhegde.in}}
-    }
-\end{center}
+\begin{header}
+    \fontsize{18 pt}{18 pt}\selectfont Karthik B Hegde
 
-\vspace{-6pt}
+    \vspace{2 pt}
 
-%-------------------------
-% PROFESSIONAL SUMMARY
-%-------------------------
-\section{Professional Summary}
-\vspace{1pt}
+    \large\textbf{DevOps Engineer | Site Reliability Engineer (SRE) | Platform Engineer}
 
-{\small DevOps Engineer with 3+ years of experience building CI/CD pipelines shipping daily to 4 platforms, managing multi-cloud infrastructure (AWS, GCP, DigitalOcean), and deploying containerized applications with Docker and Kubernetes. Built production monitoring with Prometheus/Grafana, managed Kafka event streaming, and automated infrastructure with Terraform and Pulumi across 3 cloud providers serving 10+ engineers. Built a \$0/month production infrastructure from scratch using K3s, ArgoCD, and Cloudflare Tunnel.}
+    \vspace{2 pt}
 
-%-------------------------
-% TECHNICAL SKILLS
-%-------------------------
-\section{Technical Skills}
-\vspace{1pt}
+    \small\color{darkblue}
+    Bengaluru, India
+    \enspace$|$\enspace
+    \hrefWithoutArrow{mailto:karthikhegde91@gmail.com}{karthikhegde91@gmail.com}
+    \enspace$|$\enspace
+    \hrefWithoutArrow{tel:+918747077508}{+91 87470 77508}
 
-{\small
-\skillCategory{CI/CD \& Automation}{GitHub Actions, Jenkins, Fastlane, Shorebird}
-\skillCategory{Cloud Platforms}{AWS (EC2, S3, IAM, VPC, Lambda), GCP (BigQuery, Compute Engine), DigitalOcean, Oracle Cloud, Cloudflare}
-\skillCategory{Containers \& Orchestration}{Docker, Kubernetes, K3s, ArgoCD, GitOps}
-\skillCategory{Infrastructure as Code}{Terraform, Pulumi, Ansible}
-\skillCategory{Monitoring \& Observability}{Prometheus, Grafana, VictoriaMetrics, CloudWatch, Uptime Kuma}
-\skillCategory{Networking \& Security}{Nginx, DNS, SSL/TLS (Let's Encrypt), Firewalls (iptables/UFW), IAM/RBAC, Cloudflare Tunnel}
-\skillCategory{Data \& Messaging}{Apache Kafka, PostgreSQL (replication), Redis, BigQuery}
-\skillCategory{Programming \& Tools}{Python, Bash, Linux (Ubuntu/RHEL), Git, JIRA, Scrum/Kanban}
-\skillCategory{AI-Assisted Engineering}{Claude Code, Prompt Engineering, Agentic Coding Workflows}
-}
+    \hrefWithoutArrow{https://www.linkedin.com/in/karthikhegde1}{linkedin.com/in/karthikhegde1}
+    \enspace$|$\enspace
+    \hrefWithoutArrow{https://github.com/KarthikHegde91}{github.com/KarthikHegde91}
+    \enspace$|$\enspace
+    \hrefWithoutArrow{https://karthikhegde.in}{karthikhegde.in}
+    \color{primaryColor}
+\end{header}
 
-%-------------------------
-% PROFESSIONAL EXPERIENCE
-%-------------------------
-\section{Professional Experience}
-\vspace{1pt}
+\vspace{-0.1 cm}
 
-\resumeSubheading
-    {DevOps Engineer}{Nov 2022 -- Present}
-    {Appsndevices Technologies Pvt. Ltd.}{Bengaluru, India}
+\section{Summary}
 
-{\small
-\begin{itemize}
-    \item Built multi-platform CI/CD pipelines with GitHub Actions shipping daily releases to \textbf{4 platforms} (Android, iOS, Windows, macOS) from a single codebase, reducing build time from \textbf{2 hours to 15 minutes} per platform
+\begin{onecolentry}
+DevOps Engineer with 3+ years spanning database engineering and DevOps/SRE. Cut multi-platform release build time from \textbf{2 hours to 15 minutes}; run Docker/Kubernetes workloads at \textbf{99.9\%+ availability} across AWS, GCP, and DigitalOcean with Terraform IaC, GitOps (ArgoCD), and Prometheus/Grafana observability. Built a \$0/month production platform from scratch using agentic AI workflows (Claude Code). Open to relocation and visa sponsorship; remote-friendly.
+\end{onecolentry}
 
-    \item Managed deployment automation serving \textbf{10+ engineers}, improving release consistency and eliminating manual deployment errors across all platforms
+\section{Experience}
 
-    \item Administered multi-cloud infrastructure across \textbf{AWS, GCP, and DigitalOcean} (EC2, S3, IAM, VPC, BigQuery, Compute Engine, Droplets) with cost optimization through right-sizing and unused resource cleanup
+\begin{twocolentry}{Nov 2023 -- Present}
+\textbf{DevOps Engineer}, Colligence Research Private Limited, Bengaluru, India
+\end{twocolentry}
 
-    \item Provisioned reproducible infrastructure using \textbf{Pulumi and Terraform}, with Ansible for config management --- managing version-controlled environments across \textbf{3 cloud providers}
+\begin{onecolentry}
+(Internal transfer from sister company Appsndevices Technologies)
+\vspace{0.05 cm}
 
-    \item Deployed and maintained \textbf{Docker} containers and \textbf{Kubernetes} clusters ensuring \textbf{99.9\%+} application availability; managed secrets with GitHub Secrets, Infisical, and Google Secret Manager
+\textbf{Project: Circle (Multi-Platform Product Delivery)}
+\begin{highlights}
+\item Built multi-platform CI/CD pipelines with \textbf{GitHub Actions} shipping daily releases to Android, iOS, Windows, and macOS from one codebase, cutting build time from \textbf{2 hours to 15 minutes} per platform.
+\item Automated code signing, artifact validation, and release promotion for \textbf{10+ engineers}, eliminating manual release errors.
+\item Implemented \textbf{Prometheus/Grafana} alerting and SLO tracking, reducing mean time to detect (MTTD); ran production on-call with root cause analysis (RCA).
+\item Developed custom \textbf{Claude Code} agent skills (CI-failure triage, deploy/rollback, log analysis, secrets audit) that reduced release and incident-response toil.
+\end{highlights}
+\end{onecolentry}
 
-    \item Implemented \textbf{Prometheus + Grafana} monitoring with custom dashboards and alerting, reducing mean-time-to-detection for production incidents; managed \textbf{Apache Kafka} clusters for distributed event streaming
+\vspace{0.08 cm}
 
-    \item Configured Nginx reverse proxies, Cloudflare DNS, SSL/TLS automation (Let's Encrypt), firewall rules (iptables/UFW), and \textbf{IAM/RBAC} policies enforcing least-privilege access
+\begin{onecolentry}
+\textbf{Project: Aikyat Platform}
+\begin{highlights}
+\item Provisioned cloud infrastructure across 3 providers (\textbf{AWS, GCP, DigitalOcean}) as version-controlled Infrastructure as Code (IaC) with \textbf{Terraform, Pulumi, and Ansible}.
+\item Operated \textbf{Docker/Kubernetes} workloads at 99.9\%+ availability; managed secrets with Infisical and Google Secret Manager, enforcing IAM/RBAC least privilege.
+\end{highlights}
+\end{onecolentry}
 
-    \item Built disaster recovery automation (database backups, restore testing, runbooks) and supported production through on-call rotations with root cause analysis
+\vspace{0.10 cm}
 
-    \item Leveraged \textbf{Claude Code} for AI-assisted scripting, debugging, config generation, and operational analysis --- accelerating engineering velocity
-\end{itemize}
-}
+\begin{twocolentry}{Nov 2022 -- Nov 2023}
+\textbf{Database Engineer}, Appsndevices Technologies Private Limited, Bengaluru, India
+\end{twocolentry}
 
-%-------------------------
-% PROJECTS
-%-------------------------
+\begin{onecolentry}
+\begin{highlights}
+\item Administered production \textbf{PostgreSQL}: streaming replication, automated backups with restore testing, and performance tuning for high availability.
+\item Engineered \textbf{Apache Kafka} event-streaming and log-aggregation pipelines feeding \textbf{BigQuery} analytics.
+\item Designed schemas and optimized complex SQL queries for application and reporting workloads.
+\end{highlights}
+\end{onecolentry}
+
 \section{Projects}
-\vspace{1pt}
 
-\projectHeading{\$0/Month Production Infrastructure}{karthikhegde.in}
+\begin{onecolentry}
+\textbf{\$0/Month Production Platform} (\hrefWithoutArrow{https://karthikhegde.in}{karthikhegde.in}) --- production infrastructure on free tiers: \textbf{K3s} on Oracle Cloud ARM, \textbf{ArgoCD} GitOps, Terraform, Prometheus + VictoriaMetrics + Grafana, Uptime Kuma, Cloudflare Tunnel (Zero Trust). Created end-to-end by directing \textbf{agentic coding} sessions in Claude Code; AI-generated Terraform, manifests, and CI pipelines, personally reviewed, tested, and operated.
+\end{onecolentry}
 
-{\small
-\begin{itemize}
-    \item Designed and deployed production-grade infrastructure on free-tier services: Hugo on Cloudflare Pages, \textbf{K3s} on Oracle Cloud ARM, \textbf{ArgoCD} GitOps, Prometheus + VictoriaMetrics monitoring, Grafana dashboards, Uptime Kuma status page, and \textbf{Cloudflare Tunnel} for zero-trust networking --- \textbf{total cost: \$0/month}
+\section{Technical Skills}
 
-    \item \textbf{Stack:} Terraform, K3s, ArgoCD, Docker, Cloudflare Tunnel, Prometheus, VictoriaMetrics, Grafana, Uptime Kuma, Hugo, GitHub Actions
-\end{itemize}
-}
+\begin{onecolentry}
+\textbf{Cloud Platforms:} AWS (EC2, S3, IAM, VPC, Lambda), GCP (Compute Engine, BigQuery), DigitalOcean, Oracle Cloud, Cloudflare; cost optimization (FinOps)
 
-%-------------------------
-% EDUCATION & CERTIFICATIONS
-%-------------------------
+\textbf{Containers \& Orchestration:} Docker, Kubernetes (K8s), K3s, ArgoCD, GitOps
+
+\textbf{IaC \& CI/CD:} Terraform, Pulumi, Ansible, GitHub Actions, Jenkins, Fastlane, Shorebird
+
+\textbf{AI \& Agentic Engineering:} Claude Code (custom agents \& skills), AI-assisted development, agentic workflows with human review gates
+
+\textbf{Monitoring \& Observability:} Prometheus, Grafana, VictoriaMetrics, CloudWatch, SLOs, alerting, on-call, incident management
+
+\textbf{Databases \& Messaging:} PostgreSQL, Apache Kafka, Redis, BigQuery, event streaming
+
+\textbf{Scripting \& Automation:} Python, Bash, PowerShell, shell scripting, Linux (Ubuntu, RHEL), Git
+
+\textbf{Networking \& Security:} NGINX, DNS, SSL/TLS (Let's Encrypt), Cloudflare Tunnel (Zero Trust), Infisical, IAM/RBAC
+\end{onecolentry}
+
 \section{Education}
-\vspace{1pt}
 
-\resumeSubheading
-    {Master of Computer Applications (MCA)}{2020 -- 2022}
-    {B.M.S College of Engineering}{Bengaluru, India}
+\begin{twocolentry}{2020 -- 2022}
+\textbf{Master of Computer Applications (MCA)}, B.M.S College of Engineering, Bengaluru
+\end{twocolentry}
 
-\vspace{4pt}
 \section{Certifications}
-\vspace{1pt}
 
-{\small \textbf{Docker Certified Associate (DCA)} --- \textit{In Progress}}
+\begin{onecolentry}
+Docker Certified Associate (DCA), in progress \enspace\textperiodcentered\enspace Certified Kubernetes Administrator (CKA), planned 2026
+\end{onecolentry}
 
 \end{document}
