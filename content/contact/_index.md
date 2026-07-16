@@ -9,5 +9,5 @@ The best way to reach me is via email: [hello@karthikhegde.in](mailto:hello@kart
 
 You can also find me on:
 - [GitHub](https://github.com/KarthikHegde91)
-- [LinkedIn](https://www.linkedin.com/in/karthik-hegde-9112b6198)
+- [LinkedIn](https://www.linkedin.com/in/karthikhegde1)
 - [Dev.to](https://dev.to/karthikhegde91)

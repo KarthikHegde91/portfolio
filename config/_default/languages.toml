@@ -15,7 +15,7 @@
     # image = "img/author.jpg"
     links = [
       { github = "https://github.com/KarthikHegde91" },
-      { linkedin = "https://www.linkedin.com/in/karthik-hegde-9112b6198" },
+      { linkedin = "https://www.linkedin.com/in/karthikhegde1" },
       { email = "mailto:hello@karthikhegde.in" },
       { link = "https://karthikhegde.in" },
     ]

@@ -60,4 +60,4 @@ hugo server -D        # live-reload dev server at http://localhost:1313
 ---
 
 **Author:** Karthik B Hegde — DevOps / SRE Engineer, Bengaluru
-[karthikhegde.in](https://karthikhegde.in) · [LinkedIn](https://www.linkedin.com/in/karthik-hegde-9112b6198) · [GitHub](https://github.com/KarthikHegde91)
+[karthikhegde.in](https://karthikhegde.in) · [LinkedIn](https://www.linkedin.com/in/karthikhegde1) · [GitHub](https://github.com/KarthikHegde91)

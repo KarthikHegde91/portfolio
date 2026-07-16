@@ -230,6 +230,6 @@ Email Me
 {{< button href="https://github.com/KarthikHegde91" target="_blank" >}}
 GitHub
 {{< /button >}}
-{{< button href="https://www.linkedin.com/in/karthik-hegde-9112b6198" target="_blank" >}}
+{{< button href="https://www.linkedin.com/in/karthikhegde1" target="_blank" >}}
 LinkedIn
 {{< /button >}}
