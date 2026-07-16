@@ -8,7 +8,7 @@ showWordCount: false
 
 ## Who I Am
 
-DevOps Engineer with 3+ years of hands-on experience at **Appsndevices Technologies**, building and automating infrastructure for mobile and enterprise SaaS products. I manage **daily deployments across 4 platforms** (Android, iOS, Windows, macOS), maintain cloud infrastructure across **multiple providers**, and build the CI/CD pipelines that a team of **10+ engineers** relies on every day.
+DevOps Engineer with 3+ years of hands-on experience across **Colligence Research** and its sister company **Appsndevices Technologies**, building and automating infrastructure for mobile and enterprise SaaS products. I manage **daily deployments across 4 platforms** (Android, iOS, Windows, macOS), maintain cloud infrastructure across **multiple providers**, and build the CI/CD pipelines that a team of **10+ engineers** relies on every day.
 
 MCA graduate from **B.M.S College of Engineering, Bengaluru** (2020–2022).
 
@@ -16,8 +16,9 @@ MCA graduate from **B.M.S College of Engineering, Bengaluru** (2020–2022).
 
 ## Professional Experience
 
-### DevOps Engineer — Appsndevices Technologies Pvt. Ltd.
-**Nov 2022 – Present** | Bengaluru, India
+### DevOps Engineer — Colligence Research Pvt. Ltd.
+**Nov 2023 – Present** | Bengaluru, India
+*Internal transfer from sister company Appsndevices Technologies*
 
 **CI/CD & Release Engineering**
 - Designed and maintained CI/CD pipelines primarily using **GitHub Actions** (primary) and **Jenkins** — shipping daily releases to **Android, iOS, Windows, and macOS** from a single codebase
@@ -28,6 +29,7 @@ MCA graduate from **B.M.S College of Engineering, Bengaluru** (2020–2022).
 - Managed cloud infrastructure across **DigitalOcean** (Droplets, networking, S3-compatible storage), **Google Cloud Platform** (BigQuery, data streaming, Compute Engine), and **AWS** (EC2, S3, IAM, VPC, Lambda)
 - Provisioned infrastructure using **Pulumi** (primary IaC tool), with experience in **Terraform** and **Ansible** for reproducible, version-controlled environments
 - Performed **cloud cost optimization** — right-sizing instances, cleaning up unused resources, and reducing infrastructure spend
+- Used **Redis** for caching and application performance optimization
 
 **Networking & Security**
 - Configured **Nginx reverse proxies** for application routing and load distribution
@@ -39,12 +41,6 @@ MCA graduate from **B.M.S College of Engineering, Bengaluru** (2020–2022).
 **Containers & Orchestration**
 - Managed **Docker-based build environments** and **Kubernetes deployments** ensuring scalable and stable application releases
 - Deployed and maintained multiple containerized services in production
-
-**Data & Messaging**
-- Managed **Apache Kafka clusters** for distributed event streaming — troubleshooting replication, connector, and consumer pipeline issues
-- Worked with **PostgreSQL** including logical replication using dump/restore extensions
-- Used **Redis** for caching and application performance optimization
-- Managed **Google BigQuery** for data analytics and streaming pipelines
 
 **Monitoring, Logging & Reliability**
 - Set up and maintained **Prometheus + Grafana** monitoring stacks — configured exporters, built dashboards, defined alert rules, and used them to identify performance bottlenecks in production
@@ -62,6 +58,14 @@ MCA graduate from **B.M.S College of Engineering, Bengaluru** (2020–2022).
 **Process & Collaboration**
 - Collaborated with development, QA, and product teams in **Agile (Scrum/Kanban)** workflows
 - Participated in sprint planning, delivering DevOps automation improvements within sprint cycles
+
+### Database Engineer — Appsndevices Technologies Pvt. Ltd.
+**Nov 2022 – Nov 2023** | Bengaluru, India
+
+- Administered production **PostgreSQL** — streaming replication (including logical replication with dump/restore extensions), automated backups with restore testing, and performance tuning for high availability
+- Managed **Apache Kafka clusters** for distributed event streaming — troubleshooting replication, connector, and consumer pipeline issues
+- Built event-streaming and log-aggregation pipelines feeding **Google BigQuery** analytics
+- Designed schemas and optimized complex **SQL** queries for application and reporting workloads
 
 ---
 
@@ -179,6 +183,7 @@ B.M.S College of Engineering, Bengaluru — 2020–2022
 ## Certifications
 
 - **Docker Certified Associate (DCA)** — *In Progress*
+- **Certified Kubernetes Administrator (CKA)** — *Planned 2026*
 
 ---
 
