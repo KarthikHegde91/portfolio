@@ -12,3 +12,9 @@ Thumbs.db
 
 # Hugo lock
 .hugo_build.lock
+
+# LaTeX build output (distributable lives in static/)
+resume/resume.pdf
+resume/*.aux
+resume/*.log
+resume/*.out

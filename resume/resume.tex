@@ -154,12 +154,12 @@
 \section{Summary}
 
 \begin{onecolentry}
-DevOps Engineer with 3+ years spanning database engineering and DevOps/SRE. Cut multi-platform release build time from \textbf{2 hours to 15 minutes}; run Docker/Kubernetes workloads at \textbf{99.9\%+ availability} across AWS, GCP, and DigitalOcean with Terraform IaC, GitOps (ArgoCD), and Prometheus/Grafana observability. Built a \$0/month production platform from scratch using agentic AI workflows (Claude Code). Open to relocation and visa sponsorship; remote-friendly.
+DevOps and Site Reliability Engineer with 3+ years spanning database engineering and DevOps/SRE, including nearly 3 years focused on DevOps/SRE. Cut multi-platform release build time from \textbf{2 hours to 15 minutes}; operate Docker and Kubernetes workloads at \textbf{99.9\%+ availability} across AWS, GCP, and DigitalOcean using Terraform IaC, GitOps (ArgoCD), and Prometheus/Grafana observability. \textbf{Immediate joiner --- no notice period.}
 \end{onecolentry}
 
 \section{Experience}
 
-\begin{twocolentry}{Nov 2023 -- Present}
+\begin{twocolentry}{Nov 2023 -- Jul 2026}
 \textbf{DevOps Engineer}, Colligence Research Private Limited, Bengaluru, India
 \end{twocolentry}
 
@@ -169,10 +169,10 @@ DevOps Engineer with 3+ years spanning database engineering and DevOps/SRE. Cut 
 
 \textbf{Project: Circle (Multi-Platform Product Delivery)}
 \begin{highlights}
-\item Built multi-platform CI/CD pipelines with \textbf{GitHub Actions} shipping daily releases to Android, iOS, Windows, and macOS from one codebase, cutting build time from \textbf{2 hours to 15 minutes} per platform.
-\item Automated code signing, artifact validation, and release promotion for \textbf{10+ engineers}, eliminating manual release errors.
-\item Implemented \textbf{Prometheus/Grafana} alerting and SLO tracking, reducing mean time to detect (MTTD); ran production on-call with root cause analysis (RCA).
-\item Developed custom \textbf{Claude Code} agent skills (CI-failure triage, deploy/rollback, log analysis, secrets audit) that reduced release and incident-response toil.
+\item Built multi-platform CI/CD pipelines with \textbf{GitHub Actions} shipping daily releases to Android, iOS, Windows, and macOS from a single codebase, cutting build time from \textbf{2 hours to 15 minutes} per platform.
+\item Automated code signing, artifact validation, and staged release promotion using \textbf{blue-green and canary rollouts} for a team of \textbf{10+ engineers}, eliminating manual release errors.
+\item Implemented \textbf{Prometheus/Grafana} alerting, centralized log aggregation with \textbf{Loki}, and SLO tracking, reducing mean time to detect (MTTD); carried production on-call and led root cause analysis (RCA) for incidents.
+\item Built custom \textbf{Claude Code} agents for CI-failure triage, deploy/rollback, log analysis, and secrets auditing, measurably reducing release and incident-response toil.
 \end{highlights}
 \end{onecolentry}
 
@@ -181,8 +181,8 @@ DevOps Engineer with 3+ years spanning database engineering and DevOps/SRE. Cut 
 \begin{onecolentry}
 \textbf{Project: Aikyat Platform}
 \begin{highlights}
-\item Provisioned cloud infrastructure across 3 providers (\textbf{AWS, GCP, DigitalOcean}) as version-controlled Infrastructure as Code (IaC) with \textbf{Terraform, Pulumi, and Ansible}.
-\item Operated \textbf{Docker/Kubernetes} workloads at 99.9\%+ availability; managed secrets with Infisical and Google Secret Manager, enforcing IAM/RBAC least privilege.
+\item Provisioned infrastructure across three cloud providers (\textbf{AWS, GCP, DigitalOcean}) as version-controlled Infrastructure as Code using \textbf{Terraform, Pulumi, and Ansible}.
+\item Operated \textbf{Docker/Kubernetes} workloads at \textbf{99.9\%+ availability}; managed secrets with Infisical and Google Secret Manager, enforcing least-privilege IAM/RBAC across all cloud accounts.
 \end{highlights}
 \end{onecolentry}
 
@@ -194,48 +194,59 @@ DevOps Engineer with 3+ years spanning database engineering and DevOps/SRE. Cut 
 
 \begin{onecolentry}
 \begin{highlights}
-\item Administered production \textbf{PostgreSQL}: streaming replication, automated backups with restore testing, and performance tuning for high availability.
+\item Administered production \textbf{PostgreSQL}: streaming replication, automated backups with tested restores, and performance tuning for high availability.
 \item Engineered \textbf{Apache Kafka} event-streaming and log-aggregation pipelines feeding \textbf{BigQuery} analytics.
-\item Designed schemas and optimized complex SQL queries for application and reporting workloads.
 \end{highlights}
 \end{onecolentry}
 
 \section{Projects}
 
 \begin{onecolentry}
-\textbf{\$0/Month Production Platform} (\hrefWithoutArrow{https://karthikhegde.in}{karthikhegde.in}) --- production infrastructure on free tiers: \textbf{K3s} on Oracle Cloud ARM, \textbf{ArgoCD} GitOps, Terraform, Prometheus + VictoriaMetrics + Grafana, Uptime Kuma, Cloudflare Tunnel (Zero Trust). Created end-to-end by directing \textbf{agentic coding} sessions in Claude Code; AI-generated Terraform, manifests, and CI pipelines, personally reviewed, tested, and operated.
+\textbf{Production Kubernetes Platform} --- \hrefWithoutArrow{https://karthikhegde.in}{karthikhegde.in} \enspace\textperiodcentered\enspace \hrefWithoutArrow{https://github.com/KarthikHegde91/infra}{github.com/KarthikHegde91/infra}
+
+\vspace{0.05 cm}
+
+Designed, built, and operate a complete production platform on free-tier infrastructure at zero recurring cost: \textbf{K3s} on Oracle Cloud ARM, \textbf{ArgoCD} GitOps, Terraform IaC, Prometheus + VictoriaMetrics + Grafana observability, Uptime Kuma, and Cloudflare Tunnel (Zero Trust) ingress. Accelerated IaC and manifest authoring using Claude Code agents; architecture, review, testing, and production operation my own.
 \end{onecolentry}
 
 \section{Technical Skills}
 
 \begin{onecolentry}
-\textbf{Cloud Platforms:} AWS (EC2, S3, IAM, VPC, Lambda), GCP (Compute Engine, BigQuery), DigitalOcean, Oracle Cloud, Cloudflare; cost optimization (FinOps)
+\textbf{Containers \& Orchestration:} Kubernetes (K8s), K3s, Docker, ArgoCD, GitOps
 
-\textbf{Containers \& Orchestration:} Docker, Kubernetes (K8s), K3s, ArgoCD, GitOps
+\textbf{Infrastructure as Code:} Terraform, Pulumi, Ansible
 
-\textbf{IaC \& CI/CD:} Terraform, Pulumi, Ansible, GitHub Actions, Jenkins, Fastlane, Shorebird
+\textbf{CI/CD \& Release:} GitHub Actions, Jenkins, Fastlane, Shorebird, blue-green deployments, canary releases
 
-\textbf{AI \& Agentic Engineering:} Claude Code (custom agents \& skills), AI-assisted development, agentic workflows with human review gates
+\textbf{Cloud Platforms:} AWS (EC2, S3, IAM, VPC, Lambda), GCP (Compute Engine, BigQuery), Oracle Cloud, DigitalOcean, Cloudflare; cost optimization (FinOps)
 
-\textbf{Monitoring \& Observability:} Prometheus, Grafana, VictoriaMetrics, CloudWatch, SLOs, alerting, on-call, incident management
+\textbf{Observability \& Reliability:} Prometheus, Grafana, Loki, VictoriaMetrics, CloudWatch, log aggregation, SLOs, alerting, on-call, incident management, RCA
 
-\textbf{Databases \& Messaging:} PostgreSQL, Apache Kafka, Redis, BigQuery, event streaming
+\textbf{Databases \& Streaming:} PostgreSQL, Apache Kafka, Redis, BigQuery, event streaming
 
-\textbf{Scripting \& Automation:} Python, Bash, PowerShell, shell scripting, Linux (Ubuntu, RHEL), Git
+\textbf{Languages \& Scripting:} Python, Bash, PowerShell, Linux (Ubuntu, RHEL), Git
 
-\textbf{Networking \& Security:} NGINX, DNS, SSL/TLS (Let's Encrypt), Cloudflare Tunnel (Zero Trust), Infisical, IAM/RBAC
+\textbf{Networking \& Security:} NGINX, DNS, SSL/TLS (Let's Encrypt), Cloudflare Tunnel (Zero Trust), Infisical, Google Secret Manager, IAM/RBAC, secrets management
+
+\textbf{AI \& Agentic Engineering:} Claude Code (custom agents and skills), AI-assisted development, agentic workflows with human review gates
 \end{onecolentry}
 
-\section{Education}
+\section{Education \& Certifications}
 
 \begin{twocolentry}{2020 -- 2022}
 \textbf{Master of Computer Applications (MCA)}, B.M.S College of Engineering, Bengaluru
 \end{twocolentry}
 
-\section{Certifications}
+\vspace{0.08 cm}
+
+\begin{twocolentry}{2017 -- 2020}
+\textbf{Bachelor of Computer Applications (BCA)}, KLE Society's Nijalingappa College, Bengaluru
+\end{twocolentry}
+
+\vspace{0.10 cm}
 
 \begin{onecolentry}
-Docker Certified Associate (DCA), in progress \enspace\textperiodcentered\enspace Certified Kubernetes Administrator (CKA), planned 2026
+Docker Certified Associate (DCA) --- in progress
 \end{onecolentry}
 
 \end{document}

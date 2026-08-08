@@ -8,21 +8,23 @@ showWordCount: false
 
 ## Who I Am
 
-DevOps Engineer with 3+ years of hands-on experience across **Colligence Research** and its sister company **Appsndevices Technologies**, building and automating infrastructure for mobile and enterprise SaaS products. I manage **daily deployments across 4 platforms** (Android, iOS, Windows, macOS), maintain cloud infrastructure across **multiple providers**, and build the CI/CD pipelines that a team of **10+ engineers** relies on every day.
+DevOps and Site Reliability Engineer with 3+ years of hands-on experience across **Colligence Research** and its sister company **Appsndevices Technologies**, building and automating infrastructure for mobile and enterprise SaaS products. I ran **daily deployments across 4 platforms** (Android, iOS, Windows, macOS), maintained cloud infrastructure across **multiple providers**, and built the CI/CD pipelines that a team of **10+ engineers** relied on every day.
 
-MCA graduate from **B.M.S College of Engineering, Bengaluru** (2020–2022).
+Currently between roles and available to join immediately.
+
+MCA from **B.M.S College of Engineering, Bengaluru** (2020–2022), and BCA from **KLE Society's Nijalingappa College, Bengaluru** (2017–2020).
 
 ---
 
 ## Professional Experience
 
 ### DevOps Engineer — Colligence Research Pvt. Ltd.
-**Nov 2023 – Present** | Bengaluru, India
+**Nov 2023 – Jul 2026** | Bengaluru, India
 *Internal transfer from sister company Appsndevices Technologies*
 
 **CI/CD & Release Engineering**
 - Designed and maintained CI/CD pipelines primarily using **GitHub Actions** (primary) and **Jenkins** — shipping daily releases to **Android, iOS, Windows, and macOS** from a single codebase
-- Built automated deployment workflows serving a team of **10+ engineers**, reducing manual deployment effort and improving release consistency across all platforms
+- Built automated deployment workflows serving a team of **10+ engineers**, using **blue-green and canary rollouts** for staged release promotion, reducing manual deployment effort and improving release consistency across all platforms
 - Managed secrets across pipelines using **GitHub Secrets**, **Infisical**, and **Google Secret Manager**
 
 **Infrastructure & Cloud**
@@ -44,7 +46,7 @@ MCA graduate from **B.M.S College of Engineering, Bengaluru** (2020–2022).
 
 **Monitoring, Logging & Reliability**
 - Set up and maintained **Prometheus + Grafana** monitoring stacks — configured exporters, built dashboards, defined alert rules, and used them to identify performance bottlenecks in production
-- Used **CloudWatch** and cloud-native logging for centralized log management
+- Built centralized log aggregation with **Loki**, and used **CloudWatch** and cloud-native logging for centralized log management
 - Built **disaster recovery and backup automation** — automated database backups, tested restore procedures, and maintained DR documentation
 - Authored **operational runbooks and documentation** for incident response and system maintenance
 - Supported production environments through **on-call rotations**, resolving CI/CD and infrastructure-related incidents with root cause analysis
@@ -80,6 +82,8 @@ MCA graduate from **B.M.S College of Engineering, Bengaluru** (2020–2022).
       <span class="cyber-skill-badge">Shorebird</span>
       <span class="cyber-skill-badge">Fastlane</span>
       <span class="cyber-skill-badge">Multi-platform</span>
+      <span class="cyber-skill-badge">Blue-Green</span>
+      <span class="cyber-skill-badge">Canary</span>
     </div>
   </div>
   <div class="cyber-skill-category">
@@ -118,6 +122,7 @@ MCA graduate from **B.M.S College of Engineering, Bengaluru** (2020–2022).
     <div class="cyber-skill-badges">
       <span class="cyber-skill-badge">Prometheus</span>
       <span class="cyber-skill-badge">Grafana</span>
+      <span class="cyber-skill-badge">Loki</span>
       <span class="cyber-skill-badge">VictoriaMetrics</span>
       <span class="cyber-skill-badge">CloudWatch</span>
       <span class="cyber-skill-badge">Uptime Kuma</span>
@@ -177,6 +182,9 @@ MCA graduate from **B.M.S College of Engineering, Bengaluru** (2020–2022).
 
 **Master of Computer Applications (MCA)**
 B.M.S College of Engineering, Bengaluru — 2020–2022
+
+**Bachelor of Computer Applications (BCA)**
+KLE Society's Nijalingappa College, Bengaluru — 2017–2020
 
 ---
 

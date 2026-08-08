@@ -107,3 +107,8 @@ flowchart LR
 - **Cloudflare Tunnel eliminates firewall complexity** — No ports to open, no IP allowlisting
 - **Hugo builds are incredibly fast** — Full site builds in under 300ms, Cloudflare Pages deploys in under 30 seconds
 - **The `.io` TLD has sovereignty risk** — Research found Mauritius transfer creates TLD retirement risk; `.in` is a safe choice for Indian developers
+- **A single node is a real trade-off** — In July 2026 the node was lost and free-tier ARM capacity was unavailable to rebuild it. Recovery took five days and exposed three untested assumptions
+
+{{< button href="/blog/k3s-node-recovery/" target="_self" >}}
+Read the incident write-up
+{{< /button >}}
