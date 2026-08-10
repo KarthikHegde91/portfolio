@@ -1,7 +1,7 @@
 ---
 title: "Synced and Healthy: The Six-Day Outage Every Dashboard Reported as Fine"
 description: "A wedged SQLite lock, a health probe that sat in Git for three weeks without ever deploying, and a GitOps loop that had never actually been closed"
-date: 2026-08-11
+date: 2026-08-11T03:00:00+05:30
 draft: false
 tags: ["Incident Response", "Postmortem", "Kubernetes", "ArgoCD", "GitOps", "Grafana", "SRE", "Observability"]
 showTableOfContents: true
